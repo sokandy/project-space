@@ -1,0 +1,159 @@
+class Mint extends List {
+
+public Mint() { super(); }
+
+public Mint(String s) {
+  int i,len=s.length();
+  for (i=(len-1);i>=0;i--)
+     AddToFront((Character.getNumericValue(s.charAt(i))));
+}
+
+public void Add(Mint a, Mint b) {
+  int carry, temp;
+  boolean erra,errb;
+  Token na=new Token();
+  Token nb=new Token();
+  carry=0;
+  Clear();
+  erra=a.GetLast(na);
+  errb=b.GetLast(nb);
+  while (!erra || !errb) {
+    if (erra)
+      temp=nb.getx()+carry;
+    else if (errb)
+      temp=na.getx()+carry;
+    else
+      temp=na.getx()+nb.getx()+carry;
+    AddToFront(temp%10);
+    carry=temp/10;
+    erra=a.GetPrevious(na);
+    errb=b.GetPrevious(nb);
+  }
+  if (carry>0)
+    AddToFront(carry);
+}
+
+// This method is used to remove the zero at the front of Mint
+public void RemZero() {
+    int size;
+    Token na=new Token();
+
+    size=Size();
+    GetFirst(na);
+    while ((na.getx() == 0) && (size != 1)) {  
+      GetNext(na);                             
+      Clear();
+      for (int i=1;i<size;i++) {
+         AddToEnd(na.getx());
+         GetNext(na);
+      }
+    size=Size();
+    GetFirst(na);
+    }
+}
+
+public void SubCode(Mint a, Mint b) {
+  int carry, temp;
+  boolean erra,errb;
+  Token na=new Token();
+  Token nb=new Token();
+  carry=0;
+
+    erra=a.GetLast(na);
+    errb=b.GetLast(nb);
+    while (!erra || !errb) {
+      if (erra)
+        temp=nb.getx()-carry;
+      else if (errb)
+        temp=na.getx()-carry;
+      else 
+        temp=na.getx()-nb.getx()-carry;
+
+      if (temp<0) {
+        temp=temp+20;
+        AddToFront(temp%10);
+        carry=temp/10;
+      }
+      else {
+        AddToFront(temp);
+        carry=temp/10;
+      }
+      erra=a.GetPrevious(na);
+      errb=b.GetPrevious(nb);
+    }
+}
+
+
+public void Subtract(Mint a, Mint b) {
+  boolean erra,errb;
+  Token na=new Token();
+  Token nb=new Token();
+  Clear();
+
+  if ((a.Size()) > (b.Size())) {
+    this.SubCode(a, b);
+  }
+    
+  if ((a.Size()) < (b.Size())) {
+    NegSign();
+    this.SubCode(b, a);
+  }
+
+  if ((a.Size()) == (b.Size())) {
+    erra=a.GetFirst(na);
+    errb=b.GetFirst(nb);
+    while ((na.getx() == nb.getx()) && (!erra) && (!errb)) {
+      erra=a.GetNext(na);
+      errb=b.GetNext(nb);
+    }
+    if (na.getx() >= nb.getx()) {
+      this.SubCode(a, b);
+    }
+    else {
+      NegSign();
+      this.SubCode(b, a);
+    }
+  }
+  this.RemZero();
+}
+
+void Print() {
+  boolean err;
+  Token n=new Token();
+  
+  if (!(GetSign()))
+    System.out.print("-");
+
+  err=GetFirst(n);
+  while(!err)
+  {   System.out.print(n.getx());
+      err=GetNext(n);
+  }
+}
+
+public static void main(String args[]) {
+  System.out.println();
+
+  if ((args.length != 3) || (((args[1].charAt(0)) != '+') && ((args[1].charAt(0)) != '-'))) 
+     System.out.println(" Usage: Digit1 operator[+/-] Digit2");
+  else {
+    Mint a = new Mint(args[0]);
+    Mint b = new Mint(args[2]);
+    Mint c = new Mint();
+
+    if ((args[1].charAt(0)) == '+') 
+      c.Add(a,b);
+    else if ((args[1].charAt(0)) == '-')
+      c.Subtract(a,b);
+
+    System.out.print("The Result of ");
+    a.Print();
+    System.out.print(" " + args[1] + " ");
+    b.Print();
+    System.out.print(" = ");
+    c.Print();
+    System.out.println();
+  }
+}
+
+}
