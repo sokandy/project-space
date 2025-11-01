@@ -1,0 +1,36 @@
+Please input the file name:Please input the number of display:
+The top 10 frequency single Chinese characters are:
+Freq(磁)= 5504
+Freq(的)= 5376
+Freq(裝)= 4096
+Freq(安)= 4096
+Freq(碟)= 3200
+Freq(在)= 2944
+Freq(您)= 2560
+Freq(區)= 2304
+Freq(分)= 2048
+Freq(割)= 2048
+
+The top 10 bigrams are:
+Freq(安裝)= 4096
+Freq(磁碟)= 2816
+Freq(磁區)= 2176
+Freq(割磁)= 2048
+Freq(分割)= 1920
+Freq(壓縮)= 1792
+Freq(如果)= 1408
+Freq(主分)= 1152
+Freq(解除)= 1024
+Freq(碟機)= 1024
+
+The conditional probability of the bigrams are:
+P(統|系)= 1
+P(納|容)= 1
+P(磁|割)= 1
+P(商|冊)= 1
+P(成|變)= 1
+P(能|才)= 1
+P(分|主)= 1
+P(有|只)= 1
+P(手|望)= 1
+P(續|繼)= 1

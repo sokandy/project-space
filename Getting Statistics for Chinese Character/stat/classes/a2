@@ -1,0 +1,36 @@
+Please input the file name:Please input the number of display:
+The top 10 frequency single Chinese characters are:
+Freq(長)= 272
+Freq(平)= 270
+Freq(的)= 270
+Freq(世)= 232
+Freq(顯)= 216
+Freq(人)= 196
+Freq(不)= 190
+Freq(一)= 174
+Freq(周)= 144
+Freq(后)= 138
+
+The top 10 bigrams are:
+Freq(長平)= 268
+Freq(世顯)= 216
+Freq(崇禎)= 114
+Freq(周后)= 110
+Freq(聖卿)= 58
+Freq(二人)= 50
+Freq(減肥)= 50
+Freq(昭仁)= 46
+Freq(田妃)= 40
+Freq(宮中)= 36
+
+The conditional probability of the bigrams are:
+P(體|曠)= 1
+P(街|?)= 1
+P(導|擾)= 1
+P(卿|聖)= 1
+P(輸|據)= 1
+P(的|妙)= 1
+P(嵐|海)= 1
+P(朋|戚)= 1
+P(世|散)= 1
+P(為|廷)= 1

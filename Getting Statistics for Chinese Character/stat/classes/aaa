@@ -1,0 +1,24 @@
+Please input the file name:Please input the number of display:wcounter start
+wcounter end
+w2counter start
+w2counter end
+ncounter start
+ncounter end
+n2counter start
+n2counter end
+sorting start
+sorting end
+
+The top 10 frequency single Chinese characters are:
+Freq(了)= 4320
+Freq(的)= 3660
+Freq(不)= 3300
+Freq(是)= 3240
+Freq(道)= 3000
+Freq(一)= 2520
+Freq(我)= 2460
+Freq(凡)= 2400
+Freq(任)= 2280
+Freq(碧)= 2220
+
+The top 10 bigrams are:

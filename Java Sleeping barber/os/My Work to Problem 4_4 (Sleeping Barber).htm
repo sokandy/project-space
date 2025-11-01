@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://www.tsum.edu/~fstrickl/CIS549/Ch4semaphores/My4_4.htm -->
+<HTML><HEAD><TITLE>My Work to Problem 4.4 (Sleeping Barber)</TITLE>
+<META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+<META content="Fred Strickland" name=Author>
+<META content="MSHTML 5.00.2314.1000" name=GENERATOR></HEAD>
+<BODY aLink=#ff0000 bgColor=#ccffff link=#808000 text=#000000 vLink=#808000>
+<UL>The author wrote Program 4.8 as a solution to the classic problem on page 
+  104+, <A href="http://www.tsum.edu/~fstrickl/CIS549/443.htm">4.4.3 The 
+  Sleeping Barber</A>.&nbsp; He noted that some of his information came from 
+  ([41], Problems 17, 18 on pages 72-73):&nbsp; Andrew S. Tanenbaum, <U>Modern 
+  Operating Systems</U>, Prentice-Hall, 1992. 
+  <P>In order to execute the author's basic program, one must go to the author's 
+  website and download the <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/Semaphores/slba.java">slba.java</A> 
+  program.&nbsp; It doesn't work, because it depends upon a number of unique 
+  supporting classes which the author has <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/bookJavaExamples.html">written</A>.&nbsp; 
+  To determine what is needed, one must compile the program and see what the 
+  error messages are.&nbsp; Then one must create a directory called 
+  c:\LIB\UTILITIES\ and a second directory called c:\LIB\SYNCHRONIZATION.&nbsp; 
+  The c:\LIB must be added to the path statement.&nbsp; In c:\LIB\UTILITIES, one 
+  must download <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/lib/Utilities/GetOpt.java">GetOpt.java</A>, 
+  <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/lib/Utilities/MyObject.java">MyObject.java</A>, 
+  and <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/lib/Utilities/Scheduler.java">Scheduler.java</A>.&nbsp; 
+  In c:\LIB\SYNCHRONIZATION, one must download <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/lib/Synchronization/BinarySemaphore.java">BinarySemaphore.java</A>, 
+  <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/lib/Synchronization/ConditionVariable.java">ConditionVariable.java</A>, 
+  <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/lib/Synchronization/CountingSemaphore.java">CountingSemaphore.java</A>, 
+  <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/lib/Synchronization/MessagePassing.java">MessagePassing.java</A>, 
+  <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/lib/Synchronization/MessagePassingRoot.java">MessagePassingRoot.java</A>, 
+  <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/lib/Synchronization/NotImplementedMethodException.java">NotImplementedMethodException.java</A>, 
+  and <A 
+  href="http://www.mcs.drexel.edu/~shartley/ConcProgJava/lib/Synchronization/Semaphore.java">Semaphore.java</A>.&nbsp; 
+  All of these will compile except Semaphore.java which is looking for 
+  WouldBlockException method.&nbsp; I have not been able to find a file for this 
+  method.&nbsp; I am not sure what the author is attempting to do with such a 
+  call. 
+  <P>8 May 1999 Notes:&nbsp; I learned from the author that there is a zip file 
+  that contains everything.&nbsp; I have downloaded it and unzipped it.&nbsp; I 
+  found the missing file.&nbsp; Now the Java compiler can complete the whole 
+  task.&nbsp; This exercise asks the student to execute the program.&nbsp; I 
+  attempt to do that, but now the program won't execute.&nbsp; Turns out the 
+  problem is that the author had a typo in the problem.&nbsp; One must type 
+  "java SleepingBarber" instead of "java SleepingBarbers."&nbsp; It now executes 
+  and yields similar results. 
+  <P>I worked through the single barber program and then I changed the program 
+  so it would run with two barbers.&nbsp; Visit <A 
+  href="http://www.tsum.edu/~fstrickl/CIS549/Ch4semaphores/single.htm">this 
+  link</A> for the single barber discussion.&nbsp; Visit <A 
+  href="http://www.tsum.edu/~fstrickl/CIS549/Ch4semaphores/double.htm">this 
+  link</A> for the two-barber discussion. <BR>&nbsp;</P></UL></BODY></HTML>

@@ -1,0 +1,256 @@
+import java.io.*;
+
+public class stat2
+{
+  public static void main(String args[])
+  {
+    try
+    {
+      System.out.print("Please input the file name:");
+      InputStreamReader isr = new InputStreamReader(System.in);
+      BufferedReader br = new BufferedReader(isr);
+
+      File f = new File(br.readLine());
+      if (f.exists())
+      {
+        int fileSize = (int) f.length();
+        System.out.print("Please input the number of display:");
+        InputStreamReader osr = new InputStreamReader(System.in);
+        BufferedReader bw = new BufferedReader(osr);
+        int disp = 0;
+        try {
+          disp = Integer.parseInt(bw.readLine());
+        }
+        catch (NumberFormatException ex) {System.out.println("Invalid integer entered"); return;}
+
+
+        int disp2 = disp;
+
+        byte[] b = new byte[fileSize];
+        byte[] tempcode = new byte[2]; // temp. store chinese char.
+        byte[] t1code = new byte[2]; // temp. store chinese char.
+        byte[] t2code = new byte[2]; // temp. store chinese char.
+        byte[] temp2code = new byte[4]; // temp. store chinese char.
+        String[] word = new String[fileSize/2]; // String array store a word
+        String[] word2 = new String[fileSize/2];
+        String[] wfreq = new String[fileSize/2];
+        String[] w2freq = new String[fileSize/2];
+        int[] freq = new int[fileSize/2];
+        int[] freq2 = new int[fileSize/2];
+        double[] cond = new double[fileSize/2];
+        int[] brk = new int[fileSize/2];
+        for (int i=0;i<fileSize/2;i++)
+          brk[i]=0;
+
+        FileInputStream fi = new FileInputStream(f);
+        fi.read(b);
+        fi.close();
+        int temp;
+        boolean flag = false;
+        boolean bflag = false;
+        int wcounter = 0;
+        int w2counter = 0;
+        int ncounter = 0;
+        int n2counter = 0;
+        int cw = 0;
+
+        for (int n = 0; n < b.length; n++) {     // clean the eng. letter
+          temp = ( (int) b[n] & 0xff);
+          if (temp > 161)
+            if (flag == false) {       // first byte of word
+              word[wcounter] = Integer.toHexString( (int) b[n] & 0xff); // hex --> string
+              flag = true;
+              bflag = false;
+            }
+            else {
+              word[wcounter] = word[wcounter] +
+                  Integer.toHexString( (int) b[n] & 0xff);
+              flag = false;
+              wcounter++;
+            }
+          if (temp <= 161)
+          {
+            if (flag == true) {       // second byte but other condition
+              word[wcounter] = word[wcounter] +
+                  Integer.toHexString( (int) b[n] & 0xff);
+              flag = false;
+              wcounter++;
+            }
+            else
+              {
+                if (bflag == false)
+                {
+                  if (wcounter != 0)
+                  {
+                    brk[wcounter - 1] = 1;
+                    bflag = true;
+                  }
+                }
+              }
+          }
+        }                  // clean the eng. letter
+
+        for (int i=0; i<wcounter-1; i++)
+        {
+          if (brk[i] != 1)
+          {
+            word2[w2counter] = word[i] + word[i+1];
+            w2counter++;
+          }
+        }
+
+        boolean dflag = false;    // make array of one word freq.
+        int wf = 0;
+        int dfg = 0;
+        wfreq[wf] = word[0];
+        freq[wf]++;
+        wf++;
+        ncounter++;
+        for (int j = 1; j < wcounter; j++) {
+          for (int k = 0; k < wf; k++) {
+            if (word[j].equals(wfreq[k]))
+            {
+              dflag = true;
+              dfg = k;
+              break;
+            }
+          }
+          if (dflag == true)
+          {
+            dflag = false;
+            freq[dfg]++;
+          }
+          else {
+  //          wf++;
+	    freq[wf]++;
+            wfreq[wf] = word[j];
+            wf++;
+            ncounter++;
+          }
+        }
+
+        boolean d2flag = false;    // make array of two word freq.
+        int w2f = 0;
+        w2freq[w2f++] = word2[0];
+        n2counter++;
+        for (int j = 1; j < w2counter; j++) {
+          for (int k = 0; k < j; k++) {
+            if (word2[j].equals(word2[k]))
+              d2flag = true;
+          }
+          if (d2flag == true)
+            d2flag = false;
+          else {
+            w2freq[w2f++] = word2[j];
+            n2counter++;
+          }
+        }
+
+//        for (int n = 0; n < ncounter; n++)   // counting the freq. of one word
+//          freq[n] = 0;
+//        for (int j = 0; j < wcounter; j++)
+//          for (int k = 0; k < ncounter; k++)
+//            if (word[j].equals(wfreq[k]))
+//              freq[k]++;
+
+        for (int n = 0; n < n2counter; n++)   // counting the freq. of two word
+          freq2[n] = 0;
+        for (int j = 0; j < w2counter; j++)
+          for (int k = 0; k < n2counter; k++)
+            if (word2[j].equals(w2freq[k]))
+              freq2[k]++;
+
+
+        for (int i=ncounter;i>1;--i) // selection sorting one word freq
+        {
+          int min=0;
+          for (int j=1;j<i;++j)
+            if (freq[j] < freq[min])
+              min=j;
+
+          int tmp = freq[i-1];
+          freq[i-1] = freq[min];
+          freq[min] = tmp;
+          String tstring = wfreq[i-1];
+          wfreq[i-1] = wfreq[min];
+          wfreq[min] = tstring;
+        }                            // selection sorting
+
+        for (int i=n2counter;i>1;--i) // selection sorting two word freq
+        {
+          int min=0;
+          for (int j=1;j<i;++j)
+            if (freq2[j] < freq2[min])
+              min=j;
+
+          int tmp = freq2[i-1];
+          freq2[i-1] = freq2[min];
+          freq2[min] = tmp;
+          String tstring = w2freq[i-1];
+          w2freq[i-1] = w2freq[min];
+          w2freq[min] = tstring;
+        }                            // selection sorting
+
+        System.out.println();
+        System.out.println("The top " + disp + " frequency single Chinese characters are:");
+        if (disp > ncounter)
+          disp = ncounter;
+        for (int j = 0; j < disp; j++) {   // print the result of one word
+          tempcode[0] = (byte) Integer.parseInt(wfreq[j].substring(0, 2), 16); // int --> one byte char.
+          tempcode[1] = (byte) Integer.parseInt(wfreq[j].substring(2), 16);
+          System.out.println("Freq(" + new String(tempcode, "BIG5").trim() +
+                             ")= " + freq[j]);
+        }
+
+        System.out.println();
+        System.out.println("The top " + disp2 + " bigrams are:");
+        if (disp2 > n2counter)
+          disp2 = n2counter;
+        for (int j = 0; j < disp2; j++) {   // print the result of two word
+          temp2code[0] = (byte) Integer.parseInt(w2freq[j].substring(0, 2), 16); // int --> one byte char.
+          temp2code[1] = (byte) Integer.parseInt(w2freq[j].substring(2, 4), 16);
+          temp2code[2] = (byte) Integer.parseInt(w2freq[j].substring(4, 6), 16);
+          temp2code[3] = (byte) Integer.parseInt(w2freq[j].substring(6), 16);
+          System.out.println("Freq(" + new String(temp2code, "BIG5").trim() +
+                             ")= " + freq2[j]);
+        }
+
+        for (int n = 0; n < n2counter; n++)
+          cond[n] = 0;
+        for (int j = 0; j < disp2; j++)    // cal the result of cond. prob.
+          for (int i = 0; i < disp; i++)
+            if (new String(w2freq[j].substring(0,4)).equals(wfreq[i]))
+              cond[j] =  ((double) freq2[j]) / ((double) freq[i] );
+
+        for (int i=n2counter;i>1;--i) // selection sorting cond. prob.
+        {
+          int min=0;
+          for (int j=1;j<i;++j)
+            if (cond[j] < cond[min])
+              min=j;
+
+          double tmp = cond[i-1];
+          cond[i-1] = cond[min];
+          cond[min] = tmp;
+          String tstring = w2freq[i-1];
+          w2freq[i-1] = w2freq[min];
+          w2freq[min] = tstring;
+        }                            // selection sorting
+
+        System.out.println();
+        System.out.println("The conditional probability of the bigrams are:");
+        for (int j = 0; j < disp2; j++) {   // print the result of cond. prob.
+          t1code[0] = (byte) Integer.parseInt(w2freq[j].substring(4, 6), 16);
+          t1code[1] = (byte) Integer.parseInt(w2freq[j].substring(6), 16);
+          t2code[0] = (byte) Integer.parseInt(w2freq[j].substring(0, 2), 16); // int --> one byte char.
+          t2code[1] = (byte) Integer.parseInt(w2freq[j].substring(2, 4), 16);
+          System.out.println("P(" + new String(t1code, "BIG5").trim() + "|" + new String(t2code, "BIG5").trim() +
+                             ")= " + cond[j]);
+        }
+      }
+      else
+        System.out.println("File not Found!!!");
+    }
+    catch (Exception e) {e.printStackTrace();}
+    }
+}

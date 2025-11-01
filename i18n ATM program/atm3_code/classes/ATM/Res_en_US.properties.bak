@@ -1,0 +1,27 @@
+#Thu Mar 27 17:32:13 CST 2003
+Status=Status
+Reset=Reset
+Password=Password
+OK=OK
+ATM=ATM
+Login=Login
+Currency=Currency
+File=File
+Exit=Exit
+Language=Language
+Balance=Balance
+Type=Type
+Amount=Amount
+Deposit=Deposit
+Withdraw=Withdraw
+Logout=Logout
+errlogin=Invalid Login ID!
+errpasswd=Invalid Password!
+Waiting=Waiting for login...
+Account=Account :
+errtitle=Error Message
+err_msg1=Your balance is not enough for withdraw!\nTransaction is rejected
+err_msg2=Invalid Input
+
+
+

@@ -1,0 +1,148 @@
+Adobe Acrobat Reader 4.0 for Windows 中文版注意事項
+1999 年3 月8 日
+Adobe Acrobat Reader 是Adobe Acrobat 4.0 的免費檢視輔助程式。Acrobat Reader 讓您能檢視、瀏覽、以
+及列印可攜式文件格式(PDF) 檔案。Adobe Acrobat 4.0 是一個能在PDF 檔案中建立、增強、預覽、編輯、
+並分享資料的完整解決辦法。若要知道更多關於Adobe Acrobat 4.0 的資訊，請蒞臨
+http://www.chinese-t.adobe.com/prodindex/acrobat/main.html。
+此”中文版注意事項” 讀我檔案包含關於安裝Acrobat Reader 4.0 for Windows 的資訊以及疑難排解事件。
+安裝Acrobat Reader 4.0 for Windows
+Acrobat Reader 4.0 Windows 的系統需求
+- i486 或Pentium 處理器的個人電腦
+- Microsoft Windows 95， Windows 98，或安裝了Service Pack 3 或更新版本的Windows NT. 4.0
+- 8MB 的快取記憶體在Window 95 以及Windows 98 (建議使用16 MB)
+- 24 MB 的快取記憶體在Windows NT(建議使用24MB)
+- 硬碟最少有10 MB 的剩餘空間
+- 額外的50MB 磁碟空間來安裝亞洲字型(選擇性)
+安裝及移除Acrobat Reader 4.0 for Windows
+要安裝Acrobat Reader 4.0，請依照以下步驟執行：
+- 利用「開始」功能表中的移除程式來移除Acrobat Reader 3.x。
+- 確定您有最少10MB 的硬碟空間。
+- 安裝Acrobat Reader 4.0
+注意事項：如果您在安裝Acrobat Reader 4.0 之後才移除Acrobat 3.x 或Acrobat Reader3.x，您必須重新安
+裝Acrobat Reader 4.0 使其能正常運作。
+移除Acrobat Reader 4.0
+Acrobat Reader 4.0 可以利用「開始」功能表中的Adobe Acrobat 4.0 移除程式來移除。如果您要移除
+Acrobat 4.0 的話，您會同時移除Acrobat Reader 4.0，因為它們分享相同的檔案。
+安裝Acrobat Reader 4.0 的亞洲字體包裝
+“亞洲字體包裝”可供Acrobat Reader 4.0 使用。在任何語言版本的Acrobat Reader 4.0 中，您可以顯示包含
+簡體中文、繁體中文、日文、和韓文(CJK) 文字的Adobe 可攜式文件格式檔案(PDF)。如果一個PDF 檔案的
+作者在該文件中嵌入CJK 字型的話，在任何語言版本的Reader 4.0 均可不需其他額外軟體來展示CJK 文
+字。如果該作者使用CJK 字型但未將之嵌入的話，您則需要採用正確的亞洲字型才能在非該語言的操作系統
+中閱讀該PDF 檔案。您只需要在您的Acrobat Reader 安裝適當的亞洲字體包裝即可。
+Adobe Acrobat 4.0 產品CD 光碟片上有提供”亞洲字體包裝”，或者，您也可以從Adobe 網頁網址：
+http://www.adobe.com/prodindex/acrobat/cjkfontpack.html 中取得。
+STSong. 是ChangZhou SinoType Technology Co., Ltd 的註冊商標。
+疑難排解項目
+利用Acrobat 3.0 或Acrobat Reader 3.0 來檢視或列印Acrobat 4.0 所建立的檔案
+您可以利用Acrobat 3.0 或Acrobat Reader 3.0 來檢視或列印Acrobat 4.0 所建立的檔案，注意以下幾點。
+Adobe Acrobat Reader 4.0 for Windows 中文版注意事項
+1999 年3 月8 日
+Adobe Acrobat Reader 是Adobe Acrobat 4.0 的免費檢視輔助程式。Acrobat Reader 讓您能檢視、瀏覽、以
+及列印可攜式文件格式(PDF) 檔案。Adobe Acrobat 4.0 是一個能在PDF 檔案中建立、增強、預覽、編輯、
+並分享資料的完整解決辦法。若要知道更多關於Adobe Acrobat 4.0 的資訊，請蒞臨
+http://www.chinese-t.adobe.com/prodindex/acrobat/main.html。
+此”中文版注意事項” 讀我檔案包含關於安裝Acrobat Reader 4.0 for Windows 的資訊以及疑難排解事件。
+安裝Acrobat Reader 4.0 for Windows
+Acrobat Reader 4.0 Windows 的系統需求
+- i486 或Pentium 處理器的個人電腦
+- Microsoft Windows 95， Windows 98，或安裝了Service Pack 3 或更新版本的Windows NT. 4.0
+- 8MB 的快取記憶體在Window 95 以及Windows 98 (建議使用16 MB)
+- 24 MB 的快取記憶體在Windows NT(建議使用24MB)
+- 硬碟最少有10 MB 的剩餘空間
+- 額外的50MB 磁碟空間來安裝亞洲字型(選擇性)
+安裝及移除Acrobat Reader 4.0 for Windows
+要安裝Acrobat Reader 4.0，請依照以下步驟執行：
+- 利用「開始」功能表中的移除程式來移除Acrobat Reader 3.x。
+- 確定您有最少10MB 的硬碟空間。
+- 安裝Acrobat Reader 4.0
+注意事項：如果您在安裝Acrobat Reader 4.0 之後才移除Acrobat 3.x 或Acrobat Reader3.x，您必須重新安
+裝Acrobat Reader 4.0 使其能正常運作。
+移除Acrobat Reader 4.0
+Acrobat Reader 4.0 可以利用「開始」功能表中的Adobe Acrobat 4.0 移除程式來移除。如果您要移除
+Acrobat 4.0 的話，您會同時移除Acrobat Reader 4.0，因為它們分享相同的檔案。
+安裝Acrobat Reader 4.0 的亞洲字體包裝
+“亞洲字體包裝”可供Acrobat Reader 4.0 使用。在任何語言版本的Acrobat Reader 4.0 中，您可以顯示包含
+簡體中文、繁體中文、日文、和韓文(CJK) 文字的Adobe 可攜式文件格式檔案(PDF)。如果一個PDF 檔案的
+作者在該文件中嵌入CJK 字型的話，在任何語言版本的Reader 4.0 均可不需其他額外軟體來展示CJK 文
+字。如果該作者使用CJK 字型但未將之嵌入的話，您則需要採用正確的亞洲字型才能在非該語言的操作系統
+中閱讀該PDF 檔案。您只需要在您的Acrobat Reader 安裝適當的亞洲字體包裝即可。
+Adobe Acrobat 4.0 產品CD 光碟片上有提供”亞洲字體包裝”，或者，您也可以從Adobe 網頁網址：
+http://www.adobe.com/prodindex/acrobat/cjkfontpack.html 中取得。
+STSong. 是ChangZhou SinoType Technology Co., Ltd 的註冊商標。
+疑難排解項目
+利用Acrobat 3.0 或Acrobat Reader 3.0 來檢視或列印Acrobat 4.0 所建立的檔案
+您可以利用Acrobat 3.0 或Acrobat Reader 3.0 來檢視或列印Acrobat 4.0 所建立的檔案，注意以下幾點。
+Adobe Acrobat Reader 4.0 for Windows 中文版注意事項
+1999 年3 月8 日
+Adobe Acrobat Reader 是Adobe Acrobat 4.0 的免費檢視輔助程式。Acrobat Reader 讓您能檢視、瀏覽、以
+及列印可攜式文件格式(PDF) 檔案。Adobe Acrobat 4.0 是一個能在PDF 檔案中建立、增強、預覽、編輯、
+並分享資料的完整解決辦法。若要知道更多關於Adobe Acrobat 4.0 的資訊，請蒞臨
+http://www.chinese-t.adobe.com/prodindex/acrobat/main.html。
+此”中文版注意事項” 讀我檔案包含關於安裝Acrobat Reader 4.0 for Windows 的資訊以及疑難排解事件。
+安裝Acrobat Reader 4.0 for Windows
+Acrobat Reader 4.0 Windows 的系統需求
+- i486 或Pentium 處理器的個人電腦
+- Microsoft Windows 95， Windows 98，或安裝了Service Pack 3 或更新版本的Windows NT. 4.0
+- 8MB 的快取記憶體在Window 95 以及Windows 98 (建議使用16 MB)
+- 24 MB 的快取記憶體在Windows NT(建議使用24MB)
+- 硬碟最少有10 MB 的剩餘空間
+- 額外的50MB 磁碟空間來安裝亞洲字型(選擇性)
+安裝及移除Acrobat Reader 4.0 for Windows
+要安裝Acrobat Reader 4.0，請依照以下步驟執行：
+- 利用「開始」功能表中的移除程式來移除Acrobat Reader 3.x。
+- 確定您有最少10MB 的硬碟空間。
+- 安裝Acrobat Reader 4.0
+注意事項：如果您在安裝Acrobat Reader 4.0 之後才移除Acrobat 3.x 或Acrobat Reader3.x，您必須重新安
+裝Acrobat Reader 4.0 使其能正常運作。
+移除Acrobat Reader 4.0
+Acrobat Reader 4.0 可以利用「開始」功能表中的Adobe Acrobat 4.0 移除程式來移除。如果您要移除
+Acrobat 4.0 的話，您會同時移除Acrobat Reader 4.0，因為它們分享相同的檔案。
+安裝Acrobat Reader 4.0 的亞洲字體包裝
+“亞洲字體包裝”可供Acrobat Reader 4.0 使用。在任何語言版本的Acrobat Reader 4.0 中，您可以顯示包含
+簡體中文、繁體中文、日文、和韓文(CJK) 文字的Adobe 可攜式文件格式檔案(PDF)。如果一個PDF 檔案的
+作者在該文件中嵌入CJK 字型的話，在任何語言版本的Reader 4.0 均可不需其他額外軟體來展示CJK 文
+字。如果該作者使用CJK 字型但未將之嵌入的話，您則需要採用正確的亞洲字型才能在非該語言的操作系統
+中閱讀該PDF 檔案。您只需要在您的Acrobat Reader 安裝適當的亞洲字體包裝即可。
+Adobe Acrobat 4.0 產品CD 光碟片上有提供”亞洲字體包裝”，或者，您也可以從Adobe 網頁網址：
+http://www.adobe.com/prodindex/acrobat/cjkfontpack.html 中取得。
+STSong. 是ChangZhou SinoType Technology Co., Ltd 的註冊商標。
+疑難排解項目
+利用Acrobat 3.0 或Acrobat Reader 3.0 來檢視或列印Acrobat 4.0 所建立的檔案
+您可以利用Acrobat 3.0 或Acrobat Reader 3.0 來檢視或列印Acrobat 4.0 所建立的檔案，注意以下幾點。
+Adobe Acrobat Reader 4.0 for Windows 中文版注意事項
+1999 年3 月8 日
+Adobe Acrobat Reader 是Adobe Acrobat 4.0 的免費檢視輔助程式。Acrobat Reader 讓您能檢視、瀏覽、以
+及列印可攜式文件格式(PDF) 檔案。Adobe Acrobat 4.0 是一個能在PDF 檔案中建立、增強、預覽、編輯、
+並分享資料的完整解決辦法。若要知道更多關於Adobe Acrobat 4.0 的資訊，請蒞臨
+http://www.chinese-t.adobe.com/prodindex/acrobat/main.html。
+此”中文版注意事項” 讀我檔案包含關於安裝Acrobat Reader 4.0 for Windows 的資訊以及疑難排解事件。
+安裝Acrobat Reader 4.0 for Windows
+Acrobat Reader 4.0 Windows 的系統需求
+- i486 或Pentium 處理器的個人電腦
+- Microsoft Windows 95， Windows 98，或安裝了Service Pack 3 或更新版本的Windows NT. 4.0
+- 8MB 的快取記憶體在Window 95 以及Windows 98 (建議使用16 MB)
+- 24 MB 的快取記憶體在Windows NT(建議使用24MB)
+- 硬碟最少有10 MB 的剩餘空間
+- 額外的50MB 磁碟空間來安裝亞洲字型(選擇性)
+安裝及移除Acrobat Reader 4.0 for Windows
+要安裝Acrobat Reader 4.0，請依照以下步驟執行：
+- 利用「開始」功能表中的移除程式來移除Acrobat Reader 3.x。
+- 確定您有最少10MB 的硬碟空間。
+- 安裝Acrobat Reader 4.0
+注意事項：如果您在安裝Acrobat Reader 4.0 之後才移除Acrobat 3.x 或Acrobat Reader3.x，您必須重新安
+裝Acrobat Reader 4.0 使其能正常運作。
+移除Acrobat Reader 4.0
+Acrobat Reader 4.0 可以利用「開始」功能表中的Adobe Acrobat 4.0 移除程式來移除。如果您要移除
+Acrobat 4.0 的話，您會同時移除Acrobat Reader 4.0，因為它們分享相同的檔案。
+安裝Acrobat Reader 4.0 的亞洲字體包裝
+“亞洲字體包裝”可供Acrobat Reader 4.0 使用。在任何語言版本的Acrobat Reader 4.0 中，您可以顯示包含
+簡體中文、繁體中文、日文、和韓文(CJK) 文字的Adobe 可攜式文件格式檔案(PDF)。如果一個PDF 檔案的
+作者在該文件中嵌入CJK 字型的話，在任何語言版本的Reader 4.0 均可不需其他額外軟體來展示CJK 文
+字。如果該作者使用CJK 字型但未將之嵌入的話，您則需要採用正確的亞洲字型才能在非該語言的操作系統
+中閱讀該PDF 檔案。您只需要在您的Acrobat Reader 安裝適當的亞洲字體包裝即可。
+Adobe Acrobat 4.0 產品CD 光碟片上有提供”亞洲字體包裝”，或者，您也可以從Adobe 網頁網址：
+http://www.adobe.com/prodindex/acrobat/cjkfontpack.html 中取得。
+STSong. 是ChangZhou SinoType Technology Co., Ltd 的註冊商標。
+疑難排解項目
+利用Acrobat 3.0 或Acrobat Reader 3.0 來檢視或列印Acrobat 4.0 所建立的檔案
+您可以利用Acrobat 3.0 或Acrobat Reader 3.0 來檢視或列印Acrobat 4.0 所建立的檔案，注意以下幾點。

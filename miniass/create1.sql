@@ -1,0 +1,4 @@
+CREATE TABLE build (
+  mkt_id NUMBER PRIMARY KEY,
+  name VARCHAR2(32),
+  shape MDSYS.SDO_GEOMETRY);

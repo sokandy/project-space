@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="motors.xsl"?>
+<Motors>
+  <motor>
+    <header userID="Andy" title="This is only for test1" sub_section="ABC" priority="5" date="04/12/2004"/>
+    <body>This is a detail of test1 ad.</body>
+  </motor>
+  <motor>
+    <header userID="Danny" title="This is only for test2" sub_section="ABC" priority="6"/>
+    <body>This is a detail of test2 ad.</body>
+  </motor>
+  <motor>
+    <header userID="Andy" title="Test Title" sub_section="ABC" priority="8"/>
+    <body>This is a detail of test3 ad.</body>
+  </motor>
+  <motor>
+    <header userID="Andy" title="This is only for test4" sub_section="ABC" priority="4"/>
+    <body>This is a detail of test4 ad.</body>
+  </motor>
+  <motor>
+    <header userID="Andy" title="This is only for test5" sub_section="ABC" priority="2"/>
+    <body>This is a detail of test5 ad.</body>
+  </motor>
+  <motor>
+    <header userID="Andy" title="This is only for test6" sub_section="ABC" priority="5"/>
+    <body>This is a detail of test6 ad.</body>
+  </motor>
+  <motor>
+    <header userID="Andy" title="This is only for test7" sub_section="ABC" priority="3"/>
+    <body>This is a detail of test7 ad.</body>
+  </motor>
+  <motor>
+    <header userID="Andy" title="This is only for test8" sub_section="ABC" priority="5"/>
+    <body>This is a detail of test8 ad.</body>
+  </motor>
+  <motor>
+    <header userID="Andy" title="This is only for test9" sub_section="ABC" priority="1"/>
+    <body>This is a detail of test9 ad.</body>
+  </motor>
+</Motors>

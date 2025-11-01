@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="notices.xsl"?>
+<Notices>
+  <notice>
+    <header userID="Andy" title="This is only for test1" sub_section="ABC" priority="5" date="04/12/2004"/>
+    <body>This is a detail of test1 ad.</body>
+  </notice>
+  <notice>
+    <header userID="Danny" title="This is only for test2" sub_section="ABC" priority="6"/>
+    <body>This is a detail of test2 ad.</body>
+  </notice>
+  <notice>
+    <header userID="Andy" title="Test Title" sub_section="ABC" priority="8"/>
+    <body>This is a detail of test3 ad.</body>
+  </notice>
+  <notice>
+    <header userID="Andy" title="This is only for test4" sub_section="ABC" priority="4"/>
+    <body>This is a detail of test4 ad.</body>
+  </notice>
+  <notice>
+    <header userID="Andy" title="This is only for test5" sub_section="ABC" priority="2"/>
+    <body>This is a detail of test5 ad.</body>
+  </notice>
+  <notice>
+    <header userID="Andy" title="This is only for test6" sub_section="ABC" priority="5"/>
+    <body>This is a detail of test6 ad.</body>
+  </notice>
+  <notice>
+    <header userID="Andy" title="This is only for test7" sub_section="ABC" priority="3"/>
+    <body>This is a detail of test7 ad.</body>
+  </notice>
+  <notice>
+    <header userID="Andy" title="This is only for test8" sub_section="ABC" priority="5"/>
+    <body>This is a detail of test8 ad.</body>
+  </notice>
+  <notice>
+    <header userID="Andy" title="This is only for test9" sub_section="ABC" priority="1"/>
+    <body>This is a detail of test9 ad.</body>
+  </notice>
+  <notice>
+   <header userID="Andy" title="Sale Computer" sub_section="Engagments"/>
+   <body>Three used Ccomputer
+sales</body>
+  </notice>
+  <notice>
+   <header userID="Andy" title="Wanted to by bicycle" sub_section="Public Notices"/>
+   <body>I wanted to buy a
+bicycle.</body>
+  </notice>
+  <notice>
+   <header userID="Eric" title="sales a ball" sub_section="Births" priority="9"/>
+   <body>9</body>
+  </notice>
+  <notice>
+   <header userID="Eric" title="Sale big ball" sub_section="Anniversaries" priority="8"/>
+   <body>9</body>
+  </notice>
+  <notice>
+   <header userID="Eric" title="Sale a Dog" sub_section="Public Notices" priority="4" day="3" stdate="Tue Dec 07 11:57:16 GMT+08:00 2004"/>
+   <body>A big Dog for sell</body>
+  </notice>
+  <notice>
+   <header userID="Eric" title="Big Sale" sub_section="Anniversaries" priority="1" day="1" stdate="7"/>
+   <body>Big Big Big sale</body>
+  </notice>
+  <notice>
+   <header userID="Andy" title="small sales" sub_section="Engagments" priority="1" day="1" stdate="Tue Dec 07 12:42:04 GMT+08:00 2004"/>
+   <body>small small</body>
+  </notice>
+  <notice>
+   <header userID="Eric" title="Big Input date" sub_section="Tender" priority="9" day="1" stdate="Tue Dec 07 12:55:57 GMT+08:00 2004"/>
+   <body>This is the lare input date.</body>
+  </notice>
+  <notice>
+   <header userID="Eric" title="This first one" sub_section="Weddings" priority="9" day="1" stdate="Tue Dec 07 12:57:38 GMT+08:00 2004"/>
+   <body>This is the first one</body>
+  </notice>
+  <notice>
+   <header userID="Eric" title="The is the last one" sub_section="Engagments" priority="3" day="2" stdate="Tue Dec 07 12:58:18 GMT+08:00 2004"/>
+   <body>The is the last one</body>
+  </notice>
+  <notice>
+   <header userID="eric2609" title="Andy add post" sub_section="Engagments" priority="5" day="1" stdate="Tue Dec 07 17:05:19 GMT+08:00 2004"/>
+   <body>hasfsdafsdfsdfsdfsd</body>
+  </notice>
+</Notices>

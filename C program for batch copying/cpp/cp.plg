@@ -1,0 +1,29 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: cp - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\WINDOWS\TEMP\RSPD1C5.TMP" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/cp.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Project\cp.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSPD1C5.TMP" 
+<h3>Output Window</h3>
+Compiling...
+cp.cpp
+d:\project\cp.cpp(15) : error C2440: '=' : cannot convert from 'Dirent *' to 'struct main::Dirent *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+d:\project\cp.cpp(15) : fatal error C1903: unable to recover from previous error(s); stopping compilation
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+cp.obj - 2 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

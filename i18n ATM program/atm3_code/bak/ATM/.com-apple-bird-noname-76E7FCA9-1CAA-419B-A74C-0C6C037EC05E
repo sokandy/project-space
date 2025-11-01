@@ -1,0 +1,342 @@
+package ATM;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.*;
+//import com.borland.dx.dataset.*;
+//import com.borland.dx.sql.dataset.*;
+//import com.borland.dbswing.*;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+
+
+/**
+ * <p>Title: COMP423 Project 1</p>
+ * <p>Description: ATM Application</p>
+ * <p>Copyright: Copyright (c) 2003</p>
+ * <p>Company: PolyU</p>
+ * @author Eric Luk
+ * @version 1.0
+ */
+
+public class ATM_Frame extends JFrame {
+  Locale cLocale = new Locale("zh","HK");
+  Locale eLocale = new Locale("en","US");
+  Locale currentLocale = cLocale;
+  ResourceBundle res = ResourceBundle.getBundle("ATM.Res",currentLocale);
+//  ResourceBundle res ;
+ // res = ResourceBundle.getBundle("ATM.Res",cLocale);
+  JPanel contentPane;
+  JLabel jlbllogin = new JLabel();
+  JLabel jlblpassword = new JLabel();
+  JTextField jtxtlogin = new JTextField();
+  JPasswordField jpwdpass = new JPasswordField();
+  JButton jbtnok = new JButton();
+  JButton jbtnreset = new JButton();
+  JLabel jlblstatus = new JLabel();
+  Border border1;
+  TitledBorder titledBorder1;
+  JLabel jLabel1 = new JLabel();
+  JComboBox jcbocurrency = new JComboBox();
+  JMenuBar jmnbmain = new JMenuBar();
+  JMenu jmnufile = new JMenu();
+  JMenuItem jmnufileexit = new JMenuItem();
+  JMenu jmnulang = new JMenu();
+  JMenuItem jmnulangchi = new JMenuItem();
+  JMenuItem jmnulangeng = new JMenuItem();
+//  Column column1 = new Column();
+//  Column column3 = new Column();
+
+  //Construct the frame
+  public ATM_Frame() {
+    enableEvents(AWTEvent.WINDOW_EVENT_MASK);
+    try {
+      jbInit();
+    }
+    catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+  //Component initialization
+  private void jbInit() throws Exception  {
+    //setIconImage(Toolkit.getDefaultToolkit().createImage(ATM_Frame.class.getResource("[Your Icon]")));
+    contentPane = (JPanel) this.getContentPane();
+    border1 = new EtchedBorder(EtchedBorder.RAISED,Color.white,new Color(148, 145, 140));
+    titledBorder1 = new TitledBorder(border1,res.getString("Status"));
+    jlbllogin.setText(res.getString("Login"));
+    jlbllogin.setBounds(new Rectangle(18, 22, 41, 19));
+    contentPane.setLayout(null);
+    this.setDefaultCloseOperation(3);
+    this.setJMenuBar(jmnbmain);
+    this.setResizable(false);
+    this.setSize(new Dimension(345, 300));
+    this.setTitle(res.getString("ATM"));
+    this.addWindowListener(new java.awt.event.WindowAdapter() {
+      public void windowActivated(WindowEvent e) {
+        this_windowActivated(e);
+      }
+    });
+    jlblpassword.setText(res.getString("Password"));
+    jlblpassword.setBounds(new Rectangle(18, 53, 78, 19));
+    jtxtlogin.setBounds(new Rectangle(93, 20, 226, 23));
+    jtxtlogin.addKeyListener(new java.awt.event.KeyAdapter() {
+      public void keyPressed(KeyEvent e) {
+        jtxtlogin_keyPressed(e);
+      }
+    });
+
+    jpwdpass.setBounds(new Rectangle(93, 51, 225, 24));
+    jpwdpass.addKeyListener(new java.awt.event.KeyAdapter() {
+      public void keyPressed(KeyEvent e) {
+        jpwdpass_keyPressed(e);
+      }
+    });
+    jbtnok.setBounds(new Rectangle(19, 125, 79, 29));
+    jbtnok.setEnabled(false);
+    jbtnok.setMnemonic('O');
+    jbtnok.setText(res.getString("OK"));
+    jbtnok.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        jbtnok_actionPerformed(e);
+      }
+    });
+    jbtnreset.setBounds(new Rectangle(108, 125, 79, 29));
+    jbtnreset.setMnemonic('R');
+    jbtnreset.setText(res.getString("Reset"));
+    jbtnreset.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        jbtnreset_actionPerformed(e);
+      }
+    });
+    jlblstatus.setBorder(titledBorder1);
+    jlblstatus.setText(res.getString("Waiting"));
+    jlblstatus.setBounds(new Rectangle(17, 171, 301, 58));
+    jLabel1.setToolTipText("");
+    jLabel1.setText(res.getString("Currency"));
+    jLabel1.setBounds(new Rectangle(17, 88, 78, 19));
+    jcbocurrency.setBounds(new Rectangle(93, 88, 61, 23));
+    jmnufile.setMnemonic('F');
+    jmnufile.setText(res.getString("File"));
+    jmnufileexit.setMnemonic('E');
+    jmnufileexit.setText(res.getString("Exit"));
+    jmnufileexit.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        jmnufileexit_actionPerformed(e);
+      }
+    });
+    jmnulang.setMnemonic('L');
+    jmnulang.setText(res.getString("Language"));
+    jmnulangchi.setEnabled(false);
+    jmnulangchi.setActionCommand("Chinese (Traditional)");
+    jmnulangchi.setMnemonic('C');
+    jmnulangchi.setText("Chinese (Traditional)");
+    jmnulangchi.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        jmnulangchi_actionPerformed(e);
+      }
+    });
+//    jmnulangeng.setEnabled(false);
+    jmnulangeng.setMnemonic('E');
+    jmnulangeng.setText("English");
+    jmnulangeng.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        jmnulangeng_actionPerformed(e);
+      }
+    });
+    contentPane.add(jpwdpass, null);
+    contentPane.add(jlbllogin, null);
+    contentPane.add(jtxtlogin, null);
+    contentPane.add(jlblpassword, null);
+    contentPane.add(jlblstatus, null);
+    contentPane.add(jbtnok, null);
+    contentPane.add(jbtnreset, null);
+    contentPane.add(jLabel1, null);
+    contentPane.add(jcbocurrency, null);
+    jmnbmain.add(jmnufile);
+    jmnbmain.add(jmnulang);
+    jmnufile.add(jmnufileexit);
+    jmnulang.add(jmnulangchi);
+    jmnulang.add(jmnulangeng);
+    getRootPane().setDefaultButton(jbtnok);
+//    jtxtlogin.requestFocus();
+
+    // add items for currency combo box
+    jcbocurrency.addItem("HK$");
+    jcbocurrency.addItem("UK$");
+    jcbocurrency.addItem("US$");
+
+  }
+  //Overridden so we can exit when window is closed
+  protected void processWindowEvent(WindowEvent e) {
+    super.processWindowEvent(e);
+    if (e.getID() == WindowEvent.WINDOW_CLOSING) {
+      System.exit(0);
+    }
+  }
+
+  void jbtnok_actionPerformed(ActionEvent e) {
+    String loginid = jtxtlogin.getText().trim();
+    String currency = String.valueOf(jcbocurrency.getSelectedItem());
+
+    if (validateUser()) {
+      openAccount(loginid, currency);
+      jtxtlogin.setText("");
+      jpwdpass.setText("");
+      jcbocurrency.setSelectedIndex(0);
+      jbtnok.setEnabled(false);
+    }
+    else {
+      JOptionPane.showMessageDialog(this,
+      "Invalid login!  Please try again.",
+      "Error message", JOptionPane.ERROR_MESSAGE);
+      jtxtlogin.requestFocus();
+    }
+  }
+
+  void jbtnreset_actionPerformed(ActionEvent e) {
+    jtxtlogin.setText("") ;
+    jpwdpass.setText("");
+    jcbocurrency.setSelectedIndex(0);
+    jlblstatus.setText(res.getString("Waiting"));
+    jbtnok.setEnabled(false);
+    jtxtlogin.requestFocus();
+  }
+
+  // Validate the login id and password
+  boolean validateUser() {
+    String loginid = jtxtlogin.getText().trim();
+    String password = String.valueOf(jpwdpass.getPassword());
+    String curr = String.valueOf(jcbocurrency.getSelectedItem());
+    String inline;
+    boolean flag = false;
+
+    if (loginid.equals("") ) {
+      jlblstatus.setText(res.getString("errlogin"));
+      jtxtlogin.setText("") ;
+//      jpwdpass.setText("");
+      jbtnok.setEnabled(false);
+      jtxtlogin.requestFocus();
+      return false;
+    }
+    if (password.equals("")) {
+      jlblstatus.setText(res.getString("errpasswd"));
+//      jtxtlogin.setText("") ;
+      jpwdpass.setText("");
+      jbtnok.setEnabled(false);
+      jpwdpass.requestFocus();
+      return false;
+    }
+
+    try
+    {
+      FileInputStream fis = new FileInputStream("user.txt");
+//      FileInputStream fis = new FileInputStream(ATM_Frame.class.getResource("user.txt").toString());
+      InputStreamReader isr = new InputStreamReader(fis, "Unicode");
+      BufferedReader br = new BufferedReader(isr);
+      inline = br.readLine();
+      int pos = -1;
+
+      while (inline != null) {
+        pos = inline.indexOf(",");
+        if (loginid.equalsIgnoreCase(inline.substring(1, pos - 1))) {
+          inline = inline.substring(pos + 1);
+          pos = inline.indexOf(",");
+          if (password.equalsIgnoreCase(inline.substring(1,pos - 1))) {
+            inline = inline.substring(pos + 1);
+            pos = inline.indexOf(",");
+            if (curr.equalsIgnoreCase(inline.substring(1, pos - 1)) ) {
+              flag = true;
+              break;
+            }
+          }
+        }
+        inline = br.readLine();
+      }
+    }
+    catch (Exception e) {e.printStackTrace();}
+
+    return flag;
+  }
+
+  //  Open user account according to the login id
+  void openAccount(String loginid, String currency) {
+    String curr = null;
+    if (jcbocurrency.getSelectedIndex() == 0)
+      curr = "HK";
+    else if (jcbocurrency.getSelectedIndex() == 1)
+      curr = "UK";
+    else if (jcbocurrency.getSelectedIndex() == 2)
+      curr = "US";
+
+    ATM_Account dlg = new ATM_Account(this, "Account: ", true, loginid,
+                                      curr, currentLocale.toString().substring(0,2));
+    dlg.setSize(new Dimension(420, 320));
+    dlg.setModal(true);
+
+    //Center the window
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    Dimension dlgSize = dlg.getSize();
+    if (dlgSize.height > screenSize.height) {
+      dlgSize.height = screenSize.height;
+    }
+    if (dlgSize.width > screenSize.width) {
+      dlgSize.width = screenSize.width;
+    }
+    dlg.setLocation((screenSize.width - dlgSize.width) / 2, (screenSize.height - dlgSize.height) / 2);
+    dlg.setVisible(true);
+  }
+
+  void jtxtlogin_keyPressed(KeyEvent e) {
+    // Enable the OK Button when both login id and password are entered
+    if  (! String.valueOf(jpwdpass.getPassword()).equals("") )  {
+      jbtnok.setEnabled(true) ;
+    }
+  }
+
+  void jpwdpass_keyPressed(KeyEvent e) {
+    // Enable the OK Button when both login id and password are entered
+    if (jtxtlogin.getText().length() > 0) {
+      jbtnok.setEnabled(true) ;
+    }
+  }
+
+  void this_windowActivated(WindowEvent e) {
+    jtxtlogin.requestFocus();
+  }
+
+  void jmnufileexit_actionPerformed(ActionEvent e) {
+    System.exit(0);
+  }
+
+  void jmnulangchi_actionPerformed(ActionEvent e) {
+    jmnulangchi.setEnabled(false);
+    jmnulangeng.setEnabled(true);
+    currentLocale = cLocale;
+    changelang(currentLocale);
+  }
+
+  void jmnulangeng_actionPerformed(ActionEvent e) {
+    jmnulangchi.setEnabled(true);
+    jmnulangeng.setEnabled(false);
+    currentLocale = eLocale;
+    changelang(currentLocale);
+  }
+
+  void changelang(Locale currLocale)  {
+    res = ResourceBundle.getBundle("ATM.Res",currLocale);
+    jmnulang.setText(res.getString("Language"));
+    jlbllogin.setText(res.getString("Login"));
+    this.setTitle(res.getString("ATM"));
+    jlblpassword.setText(res.getString("Password"));
+    jbtnok.setText(res.getString("OK"));
+    jbtnreset.setText(res.getString("Reset"));
+    jlblstatus.setText(res.getString("Waiting"));
+    jLabel1.setText(res.getString("Currency"));
+    jmnufile.setText(res.getString("File"));
+    jmnufileexit.setText(res.getString("Exit"));
+    jlblstatus.setText(res.getString("Waiting"));
+    titledBorder1.setTitle(res.getString("Status"));
+  }
+}

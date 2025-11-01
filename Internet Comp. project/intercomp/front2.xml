@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by DC (None) -->
+<!-- <?cocoon-process type="xslt"?>  -->
+<?xml-stylesheet type="text/xsl" href="front2.xsl"?>
+<categories title="" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xsi:noNamespaceSchemaLocation="categories.xsd">
+	<category>
+		<title>Job</title>
+		<items>4</items>
+		<link>Motor/categories.xml</link>
+	</category>
+	<category>
+		<title>Job</title>
+		<items>1</items>
+		<link>Job/categories.xml</link>
+	</category>
+	<category>
+		<title>Notices</title>
+        	<items>3</items>
+		<link>Notices/categories.xml</link>
+	</category>
+	<category>
+		<title>Job</title>
+		<items>1</items>
+		<link>Service/categories.xml</link>
+	</category>
+	<category>
+		<title>Property</title>
+        	<items>8</items>
+		<link>Notices/categories.xml</link>
+	</category>
+	<category>
+		<title>Job</title>
+		<items>2</items>
+		<link>Job/categories.xml</link>
+	</category>
+	<category>
+		<title>Property</title>
+        	<items>1</items>
+		<link>Property/categories.xml</link>
+	</category>
+	<category>
+		<title>Notices</title>
+        	<items>1</items>
+		<link>Notices/categories.xml</link>
+	</category>
+	<category>
+		<title>Job</title>
+		<items>5</items>
+		<link>Job/categories.xml</link>
+	</category>
+</categories>

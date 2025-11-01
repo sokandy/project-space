@@ -1,0 +1,29 @@
+Please input the file name:Please input the number of display:
+The top 10 frequency single Chinese characters are:
+Freq(我)= 4
+Freq(校)= 2
+Freq(們)= 2
+Freq(的)= 1
+Freq(到)= 1
+Freq(是)= 1
+Freq(回)= 1
+
+The top 10 bigrams are:
+Freq(我校)= 2
+Freq(我們)= 2
+Freq(到我)= 1
+Freq(們的)= 1
+Freq(的我)= 1
+Freq(回到)= 1
+Freq(是我)= 1
+Freq(們回)= 1
+
+The conditional probability of the bigrams are:
+P(到|回)= 1
+P(我|到)= 1
+P(我|的)= 1
+P(我|是)= 1
+P(的|們)= 0.5
+P(們|我)= 0.5
+P(回|們)= 0.5
+P(校|我)= 0.5

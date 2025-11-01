@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<userTable> 
+  <user userID="Andy" pwd="password1" first="Cheng" sure="Andy">
+    <email>sokandy@hotmail.com</email>
+    <phone>91239123</phone>
+  </user> 
+   <user userID="Danny" pwd="abcd1234" first="Danny" sure="Tam">
+    <email>dannykw@hk1.ibm.com</email>
+    <phone></phone>
+ </user>
+   <user userID="eric2609" pwd="eric2609" first="Eric" sure="Luk">
+    <email>eric@yahoo.com.hk</email>
+    <phone>123444</phone>
+ </user>
+   <user userID="ericluk" pwd="andycheng" first="Eric" sure="Luk">
+    <email>ericlukinhk@yahoo.com</email>
+    <phone>94373295</phone>
+ </user>
+</userTable>

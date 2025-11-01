@@ -1,0 +1,38 @@
+
+
+	<html>
+
+	<head><center><b>Report Statistic</b></center></head>
+
+	<body topmargin="0" leftmargin="0">
+	<form>
+	<table border="0" width="500">
+		<tr><center><b>COURSE VS PERSON</b></center></tr>
+		  <OBJECT ID="iechart1" CLASSID="CLSID:FC25B780-75BE-11CF-8B01-444553540000" border="2"
+				 STYLE="TOP:58pt;LEFT:25pt;ZINDEX:0;"
+				codebase="http://activex.microsoft.com/controls/iexplorer/x86/iechart.cab" >
+						<PARAM NAME="Title" VALUE="Statistic">
+					  <PARAM NAME="_ExtentX" VALUE="9022">
+					  <PARAM NAME="_ExtentY" VALUE="6429">
+					  <PARAM NAME="Columns" VALUE="5">
+					  <PARAM NAME="ColumnNames" VALUE="COMP305 COMP306 COMP307 COMP308 COMP309">
+					  <PARAM NAME="ChartType" VALUE="1">
+					  <PARAM NAME="Data[0]" VALUE="20 10 30 50 80">
+					  <PARAM NAME="HorizontalAxis" VALUE="1">
+					  <PARAM NAME="VerticalAxis" VALUE="1">
+					  <PARAM NAME="hgridStyle" VALUE="1">
+					  <PARAM NAME="vgridStyle" VALUE="1">
+					  <PARAM NAME="ColorScheme" VALUE="0">
+					  <PARAM NAME="BackStyle" VALUE="1">
+					  <PARAM NAME="Scale" VALUE="100">
+					  <PARAM NAME="DisplayLegend" VALUE="1">
+					  <PARAM NAME="BackColor" VALUE="16777215">
+					  <PARAM NAME="ForeColor" VALUE="32768">
+					  <embed src="ABC" border="2" title="ABC" _extentx="9022" _extenty="6429" columns="5" columnnames="COMP305 COMP306 COMP307 COMP308 COMP309" charttype="1" data[0]="20 10 30 50 80" horizontalaxis="1" verticalaxis="1" hgridstyle="1" vgridstyle="1" colorscheme="0" backstyle="1" scale="100" displaylegend="1" backcolor="16777215" forecolor="32768"></embed>
+			</OBJECT>
+	  </td>
+	</tr>
+	</table>
+	</form>
+	</body>
+	</html>

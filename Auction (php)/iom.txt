@@ -1,0 +1,568 @@
+# Create Database IOM
+DROP DATABASE IF EXISTS iom;
+CREATE DATABASE iom;
+USE iom;
+
+# Create adminuser table for IOM 
+
+DROP TABLE IF EXISTS adminuser;
+CREATE TABLE adminuser
+(
+	a_login_id CHAR(8) NOT NULL PRIMARY KEY,	/* admin login id */
+	a_pass CHAR(8) NOT NULL				/* admin password */
+);
+
+#
+# Dumping data for table 'adminuser'
+#
+
+INSERT INTO adminuser VALUES ('admin', 'password');
+
+# Create auction table for IOM 
+
+DROP TABLE IF EXISTS auction;
+CREATE TABLE auction
+(
+	a_item_id CHAR(13) NOT NULL ,			/* auction item id */
+	a_s_price FLOAT(8,2) NOT NULL,			/* item auction sale price */
+	a_m_id CHAR(13) NOT NULL,			/* item sale to member id */
+	a_datetime DATETIME NOT NULL,			/* item auction datetime */
+	PRIMARY KEY (a_item_id, a_datetime)
+);
+
+#
+# Dumping data for table 'auction'
+#
+
+INSERT INTO auction VALUES ('0203000000006',16000,'0203000000001', '2002-03-05 11:00:00');
+INSERT INTO auction VALUES ('0203000000006',17000,'0203000000001', '2002-03-05 12:00:00');
+INSERT INTO auction VALUES ('0203000000006',18000,'0203000000001', '2002-03-05 13:00:00');
+INSERT INTO auction VALUES ('0203000000007',1100,'0203000000001', '2002-03-06 11:00:00');
+INSERT INTO auction VALUES ('0203000000007',1200,'0203000000001', '2002-03-06 12:00:00');
+INSERT INTO auction VALUES ('0203000000001',3200,'0203000000001', '2002-03-04 12:01:00');
+INSERT INTO auction VALUES ('0203000000002',16000,'0203000000001', '2002-03-04 12:02:00');
+INSERT INTO auction VALUES ('0203000000003',1200,'0203000000001', '2002-03-04 12:03:00');
+
+# Create credit table for IOM
+
+DROP TABLE IF EXISTS credit;
+CREATE TABLE credit
+(
+	cr_id INT NOT NULL auto_increment,		/* credit card id */
+	cr_type VARCHAR(30) NOT NULL,			/* credit card type */
+	PRIMARY KEY (cr_id)
+);
+
+#
+# Dumping data for table 'credit'
+#
+
+INSERT INTO credit VALUES (1,'American Express');
+INSERT INTO credit VALUES (2,'Master Card');
+INSERT INTO credit VALUES (3,'Visa');
+
+# Create payment table for IOM
+
+DROP TABLE IF EXISTS payment;
+CREATE TABLE payment
+(
+	p_id INT NOT NULL auto_increment,		/* Payment id */
+	p_type VARCHAR(30) NOT NULL,			/* Payment type */
+	PRIMARY KEY (p_id)
+);
+
+#
+# Dumping data for table 'payment'
+#
+
+INSERT INTO payment VALUES (1,'Cash');
+INSERT INTO payment VALUES (2,'Checks');
+INSERT INTO payment VALUES (3,'Credit card');
+
+# Create item table for IOM 
+
+DROP TABLE IF EXISTS item;
+CREATE TABLE item
+(
+	i_id CHAR(13) NOT NULL PRIMARY KEY,		/* item id */
+	i_m_id CHAR(13) NOT NULL,			/* item sell by member id */
+	i_title VARCHAR(30) NOT NULL,			/* item title */
+	i_desc VARCHAR(255) NOT NULL,			/* item description */
+	i_b_price FLOAT(8,2) NOT NULL,			/* item base price */
+	i_duration INT NOT NULL DEFAULT 14,		/* item duration for pending (days)*/
+	i_ship_fee ENUM('S', 'B') NOT NULL,		/* Pay by S-Seller/B-Buyer*/		
+	i_ship_out ENUM('N', 'Y') NOT NULL,		/* item send internationally */
+	i_pay_way INT NOT NULL,				/* item how to pay money */
+	i_cat INT NOT NULL,				/* item category */
+	i_s_cat INT NOT NULL,				/* item sub category */
+	i_s_date DATETIME NOT NULL,			/* item submit datetime */
+	i_status ENUM('P','O','S') NOT NULL 		/* P-Pending O-Offline S-Saled */	
+);
+
+#
+# Dumping data for table 'item'
+#
+
+INSERT INTO item VALUES ('0203000000001','0203000000001','Nokia 8850','Used for one year.',3000,64,'B','Y',3,8,33,'2002-03-01 07:15:00','P');
+INSERT INTO item VALUES ('0203000000002','0203000000001','Compaq notebook','Used for one year.',15000,64,'B','Y',3,7,29,'2002-03-02 12:03:00','P');
+INSERT INTO item VALUES ('0203000000003','0203000000001','Asus motherboard','Used for one year.',1000,64,'B','Y',3,7,29,'2002-03-02 16:04:32','P');
+INSERT INTO item VALUES ('0203000000004','0203000000001','Sharp Hi-Fi','Used for one year.',2500,64,'B','Y',3,8,36,'2002-03-03 11:33:00','P');
+INSERT INTO item VALUES ('0203000000005','0203000000001','Byte-Pro LCD Monitor','Used for one year.',3500,64,'B','Y',2,7,29,'2002-03-03 16:11:32','P');
+INSERT INTO item VALUES ('0203000000006','0203000000001','Sony E-Dog','Used for one year.',15000,64,'B','Y',1,8,34,'2002-03-04 12:03:00','P');
+INSERT INTO item VALUES ('0203000000007','0203000000001','Asus Scanner','Used for one year.',1000,64,'B','Y',1,7,29,'2002-03-05 16:04:32','P');
+INSERT INTO item VALUES ('0203000000008','0203000000001','Sony DSC-S85 Digital Cameria','Used for one year.',9000,64,'B','Y',2,8,35,'2002-03-06 16:04:32','P');
+INSERT INTO item VALUES ('0203000000009','0203000000001','Sony Playstation II','Used for one year.',9000,64,'B','Y',3,17,81,'2002-03-06 18:04:32','P');
+INSERT INTO item VALUES ('0203000000010','0203000000001','Sega Dreamcast controller','Used for one year.',500,64,'B','Y',3,17,81,'2002-03-06 18:14:32','P');
+
+
+# Create member table for IOM
+
+DROP TABLE IF EXISTS member;
+CREATE TABLE member
+(
+	m_id CHAR(13) NOT NULL PRIMARY KEY,		/* member id */
+	m_f_name VARCHAR(25) NOT NULL,			/* first name */
+	m_l_name VARCHAR(25) NOT NULL,			/* last name */
+	m_login_id CHAR(25) NOT NULL,			/* login id */
+	m_pass CHAR(25) NOT NULL,			/* password */
+	m_email VARCHAR(50) NOT NULL,			/* member email */
+	m_birth DATE NOT NULL,				/* Birthday */
+	m_add1 VARCHAR(50) NOT NULL,			/* member address1 */
+	m_add2 VARCHAR(50) NOT NULL,			/* member address2 */
+	m_add3 VARCHAR(50) NOT NULL,			/* member address3 */
+	m_cc_id CHAR(16) NOT NULL,			/* credit card id */
+	m_cc_type INT NOT NULL, 			/* credit card type */
+	m_cc_ed DATE NOT NULL,				/* credit card expired date */
+	m_tel CHAR(25) NOT NULL, 			/* member tel no */
+	m_country INT NOT NULL,				/* country code */
+	m_j_date DATE NOT NULL,				/* member join date */
+#	m_m_ed DATE NOT NULL,				/* member expired date */
+	m_save FLOAT(8,2) NOT NULL,			/* member saving account */
+	m_suspend ENUM('Y','N') NOT NULL		/* member suspended? */
+);
+
+#
+# Dumping data for table 'member'
+#
+
+INSERT INTO member VALUES ('0203000000001', 'eric', 'luk', 'ericluk', 'password', 'ericlukinhk@yahoo.com', '1960-01-01', '32F., Tai Ming Building,', 'Tai Kok Tsui,', 'Kowloon', '1111111111111111', 3, '2003-01-01', '23826299', 98, '2002-02-01', 500, 'N');
+
+
+# Create category table for IOM  
+
+DROP TABLE IF EXISTS category;
+CREATE TABLE category
+(
+	c_id INT NOT NULL auto_increment,		/* category id */
+	c_desc VARCHAR(50) NOT NULL,			/* category description */
+	PRIMARY KEY (c_id)
+);
+
+#
+# Dumping data for table 'category'
+#
+
+INSERT INTO category VALUES (1, 'Art & Antiques');
+INSERT INTO category VALUES (2, 'Books');
+INSERT INTO category VALUES (3, 'Clothing & Accessories');
+INSERT INTO category VALUES (4, 'Coins & Stamps');
+INSERT INTO category VALUES (5, 'Collectibles');
+INSERT INTO category VALUES (6, 'Comics, Cards & Science Fiction');
+INSERT INTO category VALUES (7, 'Computers & Software');
+INSERT INTO category VALUES (8, 'Electronics & Photography');
+INSERT INTO category VALUES (9, 'Gemstones & Jewelry');
+INSERT INTO category VALUES (10, 'Home & Garden');
+INSERT INTO category VALUES (11, 'Movies & Video');
+INSERT INTO category VALUES (12, 'Music');
+INSERT INTO category VALUES (13, 'Office & Business');
+INSERT INTO category VALUES (14, 'Other Goods & Services');
+INSERT INTO category VALUES (15, 'Sports & Recreation');
+INSERT INTO category VALUES (16, 'Toys & Games');
+INSERT INTO category VALUES (17, 'Video Games');
+
+# Create sub category table for IOM  
+
+DROP TABLE IF EXISTS subcat;
+CREATE TABLE subcat
+(
+	s_sc_id INT NOT NULL auto_increment,		/* sub category id */
+	s_sc_desc VARCHAR(50) NOT NULL,			/* sub category description */
+	s_cat_id INT NOT NULL,				/* category id */
+	PRIMARY KEY (s_sc_id)
+);
+
+#
+# Dumping data for table 'sub category'
+#
+
+INSERT INTO subcat VALUES (1, 'Amateur Art', 1);
+INSERT INTO subcat VALUES (2, 'Cameras', 1);
+INSERT INTO subcat VALUES (3, 'Orientalia', 1);
+INSERT INTO subcat VALUES (4, 'Others', 1);
+INSERT INTO subcat VALUES (5, 'Painting', 1);
+INSERT INTO subcat VALUES (6, 'Silver & Silver Plate', 1);
+
+INSERT INTO subcat VALUES (7, 'Audiobooks', 2);
+INSERT INTO subcat VALUES (8, 'Computers & Internet', 2);
+INSERT INTO subcat VALUES (9, 'Others', 2);
+INSERT INTO subcat VALUES (10, 'Rare', 2);
+INSERT INTO subcat VALUES (11, 'Reference', 2);
+INSERT INTO subcat VALUES (12, 'Textbooks', 2);
+
+INSERT INTO subcat VALUES (13, 'Accessories', 3);
+INSERT INTO subcat VALUES (14, 'Clothing', 3);
+INSERT INTO subcat VALUES (15, 'Others', 3);
+INSERT INTO subcat VALUES (16, 'Watches', 3);
+
+INSERT INTO subcat VALUES (17, 'Coins', 4);
+INSERT INTO subcat VALUES (18, 'Philately', 4);
+
+INSERT INTO subcat VALUES (19, 'Bottles & Cans', 5);
+INSERT INTO subcat VALUES (20, 'Cars & Motorcycles', 5);
+INSERT INTO subcat VALUES (21, 'Music Boxes', 5);
+INSERT INTO subcat VALUES (22, 'Others', 5);
+
+INSERT INTO subcat VALUES (23, 'Anime & Manga', 6);
+INSERT INTO subcat VALUES (24, 'Comic Books', 6);
+INSERT INTO subcat VALUES (25, 'Godzilla', 6);
+INSERT INTO subcat VALUES (26, 'Others', 6);
+INSERT INTO subcat VALUES (27, 'Star Trek', 6);
+INSERT INTO subcat VALUES (28, 'The X-Files', 6);
+
+INSERT INTO subcat VALUES (29, 'Hardware', 7);
+INSERT INTO subcat VALUES (30, 'Internet Services', 7);
+INSERT INTO subcat VALUES (31, 'Others', 7);
+INSERT INTO subcat VALUES (32, 'Software', 7);
+
+INSERT INTO subcat VALUES (33, 'Consumer Electronics', 8);
+INSERT INTO subcat VALUES (34, 'Others', 8);
+INSERT INTO subcat VALUES (35, 'Photo Equipment', 8);
+INSERT INTO subcat VALUES (36, 'Recording Equipment', 8);
+INSERT INTO subcat VALUES (37, 'Video Equipment', 8);
+
+INSERT INTO subcat VALUES (38, 'Beaded Jewelry', 9);
+INSERT INTO subcat VALUES (39, 'Carved & Cameo', 9);
+INSERT INTO subcat VALUES (40, 'Contemporary', 9);
+INSERT INTO subcat VALUES (41, 'Gemstones', 9);
+INSERT INTO subcat VALUES (42, 'Necklaces', 9);
+INSERT INTO subcat VALUES (43, 'Others', 9);
+
+INSERT INTO subcat VALUES (44, 'Baby Items', 10);
+INSERT INTO subcat VALUES (45, 'Crafts', 10);
+INSERT INTO subcat VALUES (46, 'Furniture', 10);
+INSERT INTO subcat VALUES (47, 'Household Items', 10);
+INSERT INTO subcat VALUES (48, 'Others', 10);
+INSERT INTO subcat VALUES (49, 'Tools & Hardware', 10);
+
+INSERT INTO subcat VALUES (50, 'DVD', 11);
+INSERT INTO subcat VALUES (51, 'Laser Discs', 11);
+INSERT INTO subcat VALUES (52, 'Others', 11);
+INSERT INTO subcat VALUES (53, 'VHS', 11);
+
+INSERT INTO subcat VALUES (54, 'CDs', 12);
+INSERT INTO subcat VALUES (55, 'Instruments', 12);
+INSERT INTO subcat VALUES (56, 'Memorabilia', 12);
+INSERT INTO subcat VALUES (57, 'Others', 12);
+INSERT INTO subcat VALUES (58, 'Records', 12);
+INSERT INTO subcat VALUES (59, 'Tapes', 12);
+
+INSERT INTO subcat VALUES (60, 'Briefcases', 13);
+INSERT INTO subcat VALUES (61, 'Fax Machines', 13);
+INSERT INTO subcat VALUES (62, 'General Equipment', 13);
+INSERT INTO subcat VALUES (63, 'Pagers', 13);
+
+INSERT INTO subcat VALUES (64, 'Metaphysical', 14);
+INSERT INTO subcat VALUES (65, 'Others', 14);
+INSERT INTO subcat VALUES (66, 'Property', 14);
+INSERT INTO subcat VALUES (67, 'Services', 14);
+INSERT INTO subcat VALUES (68, 'Tickets & Events', 14);
+
+INSERT INTO subcat VALUES (69, 'Apparel & Equipment', 15);
+INSERT INTO subcat VALUES (70, 'Exercise Equipment', 15);
+INSERT INTO subcat VALUES (71, 'Others', 15);
+
+INSERT INTO subcat VALUES (72, 'Action Figures', 16);
+INSERT INTO subcat VALUES (73, 'Diecast', 16);
+INSERT INTO subcat VALUES (74, 'Furby', 16);
+INSERT INTO subcat VALUES (75, 'Marbles', 16);
+INSERT INTO subcat VALUES (76, 'Others', 16);
+INSERT INTO subcat VALUES (77, 'Toy Soldiers', 16);
+
+INSERT INTO subcat VALUES (78, 'Dreamcast', 17);
+INSERT INTO subcat VALUES (79, 'Others', 17);
+INSERT INTO subcat VALUES (80, 'PC', 17);
+INSERT INTO subcat VALUES (81, 'Playstation', 17);
+
+# Create sequence table for IOM 
+
+DROP TABLE IF EXISTS sequence;
+CREATE TABLE sequence
+(
+	sm_key CHAR(10) NOT NULL,			/* sequence key */
+	sm_yymm CHAR(4) NOT NULL,			/* sequence yymm */
+	sm_seq INT UNSIGNED NOT NULL,			/* sequence no */
+	PRIMARY KEY (sm_key, sm_yymm)
+);
+
+#
+# Dumping data for table 'sequence'
+#
+
+INSERT INTO sequence VALUES ('adminuser','0202', 1);
+INSERT INTO sequence VALUES ('member','0203', 1);
+INSERT INTO sequence VALUES ('item','0203', 10);
+
+# Create countries table for IOM 
+
+DROP TABLE IF EXISTS countries;
+CREATE TABLE countries
+(
+  cs_id INT NOT NULL auto_increment,
+  cs_country VARCHAR(30) NOT NULL default '',
+  PRIMARY KEY (cs_id)
+);
+
+#
+# Dumping data for table 'countries'
+#
+
+INSERT INTO countries VALUES (1, 'Afghanistan');
+INSERT INTO countries VALUES (2, 'Albania');
+INSERT INTO countries VALUES (3, 'Algeria');
+INSERT INTO countries VALUES (4, 'American Samoa');
+INSERT INTO countries VALUES (5, 'Andorra');
+INSERT INTO countries VALUES (6, 'Angola');
+INSERT INTO countries VALUES (7, 'Anguilla');
+INSERT INTO countries VALUES (8, 'Antarctica');
+INSERT INTO countries VALUES (9, 'Antigua And Barbuda');
+INSERT INTO countries VALUES (10, 'Argentina');
+INSERT INTO countries VALUES (11, 'Armenia');
+INSERT INTO countries VALUES (12, 'Aruba');
+INSERT INTO countries VALUES (13, 'Australia');
+INSERT INTO countries VALUES (14, 'Austria');
+INSERT INTO countries VALUES (15, 'Azerbaijan');
+INSERT INTO countries VALUES (16, 'Bahamas');
+INSERT INTO countries VALUES (17, 'Bahrain');
+INSERT INTO countries VALUES (18, 'Bangladesh');
+INSERT INTO countries VALUES (19, 'Barbados');
+INSERT INTO countries VALUES (20, 'Belarus');
+INSERT INTO countries VALUES (21, 'Belgium');
+INSERT INTO countries VALUES (22, 'Belize');
+INSERT INTO countries VALUES (23, 'Benin');
+INSERT INTO countries VALUES (24, 'Bermuda');
+INSERT INTO countries VALUES (25, 'Bhutan');
+INSERT INTO countries VALUES (26, 'Bolivia');
+INSERT INTO countries VALUES (27, 'Bosnia and Herzegowina');
+INSERT INTO countries VALUES (28, 'Botswana');
+INSERT INTO countries VALUES (29, 'Bouvet Island');
+INSERT INTO countries VALUES (30, 'Brazil');
+INSERT INTO countries VALUES (31, 'British Indian Ocean Territory');
+INSERT INTO countries VALUES (32, 'Brunei Darussalam');
+INSERT INTO countries VALUES (33, 'Bulgaria');
+INSERT INTO countries VALUES (34, 'Burkina Faso');
+INSERT INTO countries VALUES (35, 'Burma');
+INSERT INTO countries VALUES (36, 'Burundi');
+INSERT INTO countries VALUES (37, 'Cambodia');
+INSERT INTO countries VALUES (38, 'Cameroon');
+INSERT INTO countries VALUES (39, 'Canada');
+INSERT INTO countries VALUES (40, 'Cape Verde');
+INSERT INTO countries VALUES (41, 'Cayman Islands');
+INSERT INTO countries VALUES (42, 'Central African Republic');
+INSERT INTO countries VALUES (43, 'Chad');
+INSERT INTO countries VALUES (44, 'Chile');
+INSERT INTO countries VALUES (45, 'China');
+INSERT INTO countries VALUES (46, 'Christmas Island');
+INSERT INTO countries VALUES (47, 'Cocos (Keeling) Islands');
+INSERT INTO countries VALUES (48, 'Colombia');
+INSERT INTO countries VALUES (49, 'Comoros');
+INSERT INTO countries VALUES (50, 'Congo');
+INSERT INTO countries VALUES (51, 'Congo, the Democratic Republic');
+INSERT INTO countries VALUES (52, 'Cook Islands');
+INSERT INTO countries VALUES (53, 'Costa Rica');
+INSERT INTO countries VALUES (54, 'Cote d\'Ivoire');
+INSERT INTO countries VALUES (55, 'Croatia');
+INSERT INTO countries VALUES (56, 'Cyprus');
+INSERT INTO countries VALUES (57, 'Czech Republic');
+INSERT INTO countries VALUES (58, 'Denmark');
+INSERT INTO countries VALUES (59, 'Djibouti');
+INSERT INTO countries VALUES (60, 'Dominica');
+INSERT INTO countries VALUES (61, 'Dominican Republic');
+INSERT INTO countries VALUES (62, 'East Timor');
+INSERT INTO countries VALUES (63, 'Ecuador');
+INSERT INTO countries VALUES (64, 'Egypt');
+INSERT INTO countries VALUES (65, 'El Salvador');
+INSERT INTO countries VALUES (66, 'England');
+INSERT INTO countries VALUES (67, 'Equatorial Guinea');
+INSERT INTO countries VALUES (68, 'Eritrea');
+INSERT INTO countries VALUES (69, 'Estonia');
+INSERT INTO countries VALUES (70, 'Ethiopia');
+INSERT INTO countries VALUES (71, 'Falkland Islands');
+INSERT INTO countries VALUES (72, 'Faroe Islands');
+INSERT INTO countries VALUES (73, 'Fiji');
+INSERT INTO countries VALUES (74, 'Finland');
+INSERT INTO countries VALUES (75, 'France');
+INSERT INTO countries VALUES (76, 'French Guiana');
+INSERT INTO countries VALUES (77, 'French Polynesia');
+INSERT INTO countries VALUES (78, 'French Southern Territories');
+INSERT INTO countries VALUES (79, 'Gabon');
+INSERT INTO countries VALUES (80, 'Gambia');
+INSERT INTO countries VALUES (81, 'Georgia');
+INSERT INTO countries VALUES (82, 'Ghana');
+INSERT INTO countries VALUES (83, 'Gibraltar');
+INSERT INTO countries VALUES (84, 'Great Britain');
+INSERT INTO countries VALUES (85, 'Greece');
+INSERT INTO countries VALUES (86, 'Greenland');
+INSERT INTO countries VALUES (87, 'Grenada');
+INSERT INTO countries VALUES (88, 'Guadeloupe');
+INSERT INTO countries VALUES (89, 'Guam');
+INSERT INTO countries VALUES (90, 'Guatemala');
+INSERT INTO countries VALUES (91, 'Guinea');
+INSERT INTO countries VALUES (92, 'Guinea-Bissau');
+INSERT INTO countries VALUES (93, 'Guyana');
+INSERT INTO countries VALUES (94, 'Haiti');
+INSERT INTO countries VALUES (95, 'Heard and Mc Donald Islands');
+INSERT INTO countries VALUES (96, 'Holy See (Vatican City State)');
+INSERT INTO countries VALUES (97, 'Honduras');
+INSERT INTO countries VALUES (98, 'Hong Kong');
+INSERT INTO countries VALUES (99, 'Hungary');
+INSERT INTO countries VALUES (100, 'Iceland');
+INSERT INTO countries VALUES (101, 'India');
+INSERT INTO countries VALUES (102, 'Indonesia');
+INSERT INTO countries VALUES (103, 'Ireland');
+INSERT INTO countries VALUES (104, 'Israel');
+INSERT INTO countries VALUES (105, 'Italy');
+INSERT INTO countries VALUES (106, 'Jamaica');
+INSERT INTO countries VALUES (107, 'Japan');
+INSERT INTO countries VALUES (108, 'Jordan');
+INSERT INTO countries VALUES (109, 'Kazakhstan');
+INSERT INTO countries VALUES (110, 'Kenya');
+INSERT INTO countries VALUES (111, 'Kiribati');
+INSERT INTO countries VALUES (112, 'Korea (South)');
+INSERT INTO countries VALUES (113, 'Kuwait');
+INSERT INTO countries VALUES (114, 'Kyrgyzstan');
+INSERT INTO countries VALUES (115, 'Lao People\'s Democratic Republ');
+INSERT INTO countries VALUES (116, 'Latvia');
+INSERT INTO countries VALUES (117, 'Lebanon');
+INSERT INTO countries VALUES (118, 'Lesotho');
+INSERT INTO countries VALUES (119, 'Liberia');
+INSERT INTO countries VALUES (120, 'Liechtenstein');
+INSERT INTO countries VALUES (121, 'Lithuania');
+INSERT INTO countries VALUES (122, 'Luxembourg');
+INSERT INTO countries VALUES (123, 'Macau');
+INSERT INTO countries VALUES (124, 'Macedonia');
+INSERT INTO countries VALUES (125, 'Madagascar');
+INSERT INTO countries VALUES (126, 'Malawi');
+INSERT INTO countries VALUES (127, 'Malaysia');
+INSERT INTO countries VALUES (128, 'Maldives');
+INSERT INTO countries VALUES (129, 'Mali');
+INSERT INTO countries VALUES (130, 'Malta');
+INSERT INTO countries VALUES (131, 'Marshall Islands');
+INSERT INTO countries VALUES (132, 'Martinique');
+INSERT INTO countries VALUES (133, 'Mauritania');
+INSERT INTO countries VALUES (134, 'Mauritius');
+INSERT INTO countries VALUES (135, 'Mayotte');
+INSERT INTO countries VALUES (136, 'Mexico');
+INSERT INTO countries VALUES (137, 'Micronesia, Federated States o');
+INSERT INTO countries VALUES (138, 'Moldova, Republic of');
+INSERT INTO countries VALUES (139, 'Monaco');
+INSERT INTO countries VALUES (140, 'Mongolia');
+INSERT INTO countries VALUES (141, 'Montserrat');
+INSERT INTO countries VALUES (142, 'Morocco');
+INSERT INTO countries VALUES (143, 'Mozambique');
+INSERT INTO countries VALUES (144, 'Namibia');
+INSERT INTO countries VALUES (145, 'Nauru');
+INSERT INTO countries VALUES (146, 'Nepal');
+INSERT INTO countries VALUES (147, 'Netherlands');
+INSERT INTO countries VALUES (148, 'Netherlands Antilles');
+INSERT INTO countries VALUES (149, 'New Caledonia');
+INSERT INTO countries VALUES (150, 'New Zealand');
+INSERT INTO countries VALUES (151, 'Nicaragua');
+INSERT INTO countries VALUES (152, 'Niger');
+INSERT INTO countries VALUES (153, 'Nigeria');
+INSERT INTO countries VALUES (154, 'Niuev');
+INSERT INTO countries VALUES (155, 'Norfolk Island');
+INSERT INTO countries VALUES (156, 'Northern Ireland');
+INSERT INTO countries VALUES (157, 'Northern Mariana Islands');
+INSERT INTO countries VALUES (158, 'Norway');
+INSERT INTO countries VALUES (159, 'Oman');
+INSERT INTO countries VALUES (160, 'Pakistan');
+INSERT INTO countries VALUES (161, 'Palau');
+INSERT INTO countries VALUES (162, 'Panama');
+INSERT INTO countries VALUES (163, 'Papua New Guinea');
+INSERT INTO countries VALUES (164, 'Paraguay');
+INSERT INTO countries VALUES (165, 'Peru');
+INSERT INTO countries VALUES (166, 'Philippines');
+INSERT INTO countries VALUES (167, 'Pitcairn');
+INSERT INTO countries VALUES (168, 'Poland');
+INSERT INTO countries VALUES (169, 'Portugal');
+INSERT INTO countries VALUES (170, 'Puerto Rico');
+INSERT INTO countries VALUES (171, 'Qatar');
+INSERT INTO countries VALUES (172, 'Reunion');
+INSERT INTO countries VALUES (173, 'Romania');
+INSERT INTO countries VALUES (174, 'Russian Federation');
+INSERT INTO countries VALUES (175, 'Rwanda');
+INSERT INTO countries VALUES (176, 'Saint Kitts and Nevis');
+INSERT INTO countries VALUES (177, 'Saint Lucia');
+INSERT INTO countries VALUES (178, 'Saint Vincent and the Grenadin');
+INSERT INTO countries VALUES (179, 'Samoa (Independent)');
+INSERT INTO countries VALUES (180, 'San Marino');
+INSERT INTO countries VALUES (181, 'Sao Tome and Principe');
+INSERT INTO countries VALUES (182, 'Saudi Arabia');
+INSERT INTO countries VALUES (183, 'Scotland');
+INSERT INTO countries VALUES (184, 'Senegal');
+INSERT INTO countries VALUES (185, 'Seychelles');
+INSERT INTO countries VALUES (186, 'Sierra Leone');
+INSERT INTO countries VALUES (187, 'Singapore');
+INSERT INTO countries VALUES (188, 'Slovakia');
+INSERT INTO countries VALUES (189, 'Slovenia');
+INSERT INTO countries VALUES (190, 'Solomon Islands');
+INSERT INTO countries VALUES (191, 'Somalia');
+INSERT INTO countries VALUES (192, 'South Africa');
+INSERT INTO countries VALUES (193, 'South Georgia and the South Sa');
+INSERT INTO countries VALUES (194, 'Spain');
+INSERT INTO countries VALUES (195, 'Sri Lanka');
+INSERT INTO countries VALUES (196, 'St. Helena');
+INSERT INTO countries VALUES (197, 'St. Pierre and Miquelon');
+INSERT INTO countries VALUES (198, 'Suriname');
+INSERT INTO countries VALUES (199, 'Svalbard and Jan Mayen Islands');
+INSERT INTO countries VALUES (200, 'Swaziland');
+INSERT INTO countries VALUES (201, 'Sweden');
+INSERT INTO countries VALUES (202, 'Switzerland');
+INSERT INTO countries VALUES (203, 'Taiwan');
+INSERT INTO countries VALUES (204, 'Tajikistan');
+INSERT INTO countries VALUES (205, 'Tanzania');
+INSERT INTO countries VALUES (206, 'Thailand');
+INSERT INTO countries VALUES (207, 'Togo');
+INSERT INTO countries VALUES (208, 'Tokelau');
+INSERT INTO countries VALUES (209, 'Tonga');
+INSERT INTO countries VALUES (210, 'Trinidad and Tobago');
+INSERT INTO countries VALUES (211, 'Tunisia');
+INSERT INTO countries VALUES (212, 'Turkey');
+INSERT INTO countries VALUES (213, 'Turkmenistan');
+INSERT INTO countries VALUES (214, 'Turks and Caicos Islands');
+INSERT INTO countries VALUES (215, 'Tuvalu');
+INSERT INTO countries VALUES (216, 'Uganda');
+INSERT INTO countries VALUES (217, 'Ukraine');
+INSERT INTO countries VALUES (218, 'United Arab Emiratesv');
+INSERT INTO countries VALUES (219, 'United States Minor Outlying I');
+INSERT INTO countries VALUES (220, 'Uruguay');
+INSERT INTO countries VALUES (221, 'Uzbekistan');
+INSERT INTO countries VALUES (222, 'Vanuatu');
+INSERT INTO countries VALUES (223, 'Venezuela');
+INSERT INTO countries VALUES (224, 'Viet Nam');
+INSERT INTO countries VALUES (225, 'Virgin Islands (British)');
+INSERT INTO countries VALUES (226, 'Virgin Islands (U.S.)');
+INSERT INTO countries VALUES (227, 'Wales');
+INSERT INTO countries VALUES (228, 'Wallis and Futuna Islands');
+INSERT INTO countries VALUES (229, 'Western Sahara');
+INSERT INTO countries VALUES (230, 'Yemen');
+INSERT INTO countries VALUES (231, 'Zambia');
+INSERT INTO countries VALUES (232, 'Zimbabwe');
+INSERT INTO countries VALUES (236, 'Germany');
+
+DROP TABLE IF EXISTS test;
+CREATE TABLE test
+(
+	t_id CHAR(13) NOT NULL PRIMARY KEY,		/*  */
+	t_date DATE NOT NULL				/*  */
+);

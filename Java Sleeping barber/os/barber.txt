@@ -1,0 +1,54 @@
+const int NumChairs = N;
+semaphore customers = 0,     // number of waiting customers
+          barbers = 0,       // number of barbers
+          mutex = 1;         // for mutual exclusion
+int       NumWaiting = 0;    // how many customers are waiting
+
+
+--------------------------------------------------------------------------------
+
+void Customer( ) {
+
+   P(mutex);                     // gonna try for a chair . . .
+
+   if (NumWaiting < NumChairs) { // . . . if one is available
+
+      NumWaiting++;              // that's one more waiting customer
+
+      V(customers);              // Hey, Barber!
+
+      V(mutex);                  // 
+
+      P(barbers);                // wait 'til the barber's available
+
+      GetHairCut( );             // . . . then get clipped
+   }
+   else {
+
+      V(mutex);                  // no chair available, so leave
+   }
+}
+
+
+--------------------------------------------------------------------------------
+
+void Barber( ) {
+
+   do {
+
+      P(customer);         // sleep, if no customers are waiting
+
+      P(mutex);            // gonna clip someone . . .
+
+      NumWaiting--;        // . . . who won't be waiting anymore
+
+      V(barbers);          // . . . as soon as I wake him up
+
+      V(mutex);            // next victim selected
+
+      CutHair( );          // clip 'em
+
+   } while 1;
+
+}
+

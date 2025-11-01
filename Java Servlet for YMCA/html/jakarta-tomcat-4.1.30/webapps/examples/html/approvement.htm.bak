@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=big5">
+<style type="text/css">
+h3 {font-family: arial}
+p {font-family: arial}
+tr {font: 11px arial}
+</style>
+
+<TITLE></TITLE>
+<body bgcolor="#FFFFFF" topmargin="2" leftmargin="2">
+
+<form method="GET" action="../servlet/Approve">
+
+<table border="0" width="643" cellspacing="1" cellpadding="1">
+  <tr>
+    <td colspan="3" height="20"><b><font face="Arial" size="4" color="#666666">Course
+          Approvement</font></b></td>
+  </tr>
+<tr>
+    <td width="290" bgcolor="#9B96D8"><font face="Arial" size="3" color="#FFFFFF">
+        Get approve by HKID
+    </td>
+	<td colspan="2" bgcolor="#9B96D8"><font face="Arial" size="1" color="#FFFFFF">
+
+        <input name="user" type="text" size="6" maxlength="6">
+        <input type="submit" name="action" value="Approve">
+      </td>
+  </tr><tr>
+     <td width="290" bgcolor="#9B96D8"><font face="Arial" size="1" color="#FFFFFF">
+      <font face="Arial" size="1" color="#FFFFFF">&nbsp;      </font> </td>
+ 	<td width="241" bgcolor="#9B96D8"><font face="Arial" size="1" color="#FFFFFF">&nbsp;
+        </font>
+ 	</td>
+   </tr>
+
+</table>
+
+<p>&nbsp;</p>
+</form>
+
+<P>&nbsp;
+</body>
+</html>

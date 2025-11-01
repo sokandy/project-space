@@ -1,0 +1,36 @@
+Please input the file name:Please input the number of display:
+The top 10 frequency single Chinese characters are:
+Freq(學)= 40
+Freq(課)= 26
+Freq(日)= 18
+Freq(女)= 17
+Freq(校)= 17
+Freq(童)= 17
+Freq(生)= 17
+Freq(染)= 15
+Freq(的)= 15
+Freq(有)= 14
+
+The top 10 bigrams are:
+Freq(復課)= 13
+Freq(學校)= 13
+Freq(女童)= 13
+Freq(停課)= 12
+Freq(感染)= 10
+Freq(中學)= 8
+Freq(懷疑)= 7
+Freq(昨日)= 6
+Freq(期間)= 5
+Freq(接受)= 5
+
+The conditional probability of the bigrams are:
+P(新|圍)= 1
+P(芬|椒)= 1
+P(課|停)= 1
+P(染|感)= 1
+P(的|供)= 1
+P(疑|懷)= 1
+P(知|得)= 1
+P(續|繼)= 1
+P(復|才)= 1
+P(免|避)= 1

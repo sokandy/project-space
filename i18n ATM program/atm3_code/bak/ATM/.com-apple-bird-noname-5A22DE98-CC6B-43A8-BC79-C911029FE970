@@ -1,0 +1,396 @@
+package ATM;
+
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.border.*;
+import java.awt.event.*;
+import java.math.*;                      // for round function
+import java.util.*;                      // for Date() function
+import java.text.*;
+// import com.borland.dbswing.*;            // for Dateformat
+import java.lang.*;
+import java.io.*;
+/**
+ * <p>Title: COMP423 Project 1</p>
+ * <p>Description: ATM Application</p>
+ * <p>Copyright: Copyright (c) 2003</p>
+ * <p>Company: PolyU</p>
+ * @author Eric Luk
+ * @version 1.0
+ */
+
+public class ATM_Account extends JDialog {
+//  Locale tLocale = new Locale("zh","HK");;
+  Locale currentLocale = null; // tLocale;
+  NumberFormat currencyFormatter = null;
+  ResourceBundle res = null;
+  JPanel panel1 = new JPanel();
+  JLabel jLabel1 = new JLabel();
+  JLabel jLabel2 = new JLabel();
+  JLabel jLabel3 = new JLabel();
+  JLabel jlblbalance = new JLabel();
+  ButtonGroup jbtgtype = new ButtonGroup();
+  JRadioButton jrabdeposit = new JRadioButton();
+  JRadioButton jrabwithdraw = new JRadioButton();
+  JTextField jtxtamount = new JTextField();
+  JButton jbtnok = new JButton();
+  JButton jbtnlogout = new JButton();
+  JScrollPane jScrollPane1 = new JScrollPane();
+  Border border1;
+  TitledBorder titledBorder1;
+  JTextArea jtxastatus = new JTextArea();
+//  JLabel jlblbalance2 = new JLabel();
+
+
+  public ATM_Account(Frame frame, String title, boolean modal, String loginid, String currency, String lang) {
+    super(frame, title, modal);
+    try {
+      jbInit(loginid, currency, lang);
+      pack();
+    }
+    catch(Exception ex) {
+      ex.printStackTrace();
+    }
+  }
+
+  public ATM_Account() {
+    this(null, "", false, null, null, null);
+  }
+
+  void jbInit(String loginid, String currency, String lang) throws Exception {
+    Locale cLocale = new Locale(lang,currency);
+    currentLocale = cLocale;
+    res = ResourceBundle.getBundle("ATM.Res",currentLocale);
+    currencyFormatter = NumberFormat.getCurrencyInstance(currentLocale);
+    double balance = 0;
+    jbInit();
+//    this.setTitle("Account :" + loginid);
+    this.setTitle("Account: " + loginid);
+//    jlblcurrency.setText(currency);
+    balance = getBalance(loginid);
+    jlblbalance.setText(String.valueOf(balance));
+//    jlblbalance.setText(currencyFormatter.format(balance));
+    getLog(loginid);
+    jLabel1.setText(res.getString("Balance"));
+    jLabel2.setText(res.getString("Type"));
+    jLabel3.setText(res.getString("Amount"));
+    jrabdeposit.setText(res.getString("Deposit"));
+    jrabwithdraw.setText(res.getString("Withdraw"));
+    jbtnok.setText(res.getString("OK"));
+    jbtnlogout.setText(res.getString("Logout"));
+    titledBorder1.setTitle(res.getString("Status"));
+
+  }
+
+  void jbInit() throws Exception {
+    border1 = BorderFactory.createEtchedBorder(Color.white,new Color(148, 145, 140));
+    titledBorder1 = new TitledBorder(border1,"Status");
+    panel1.setLayout(null);
+    this.getContentPane().setLayout(null);
+    panel1.setBounds(new Rectangle(0, 0, 400, 300));
+//    jLabel1.setText(res.getString("Balance"));
+    jLabel1.setBounds(new Rectangle(25, 19, 70, 19));
+//    jLabel2.setText(res.getString("Type"));
+    jLabel2.setBounds(new Rectangle(25, 46, 41, 19));
+//    jLabel3.setText(res.getString("Amount"));
+    jLabel3.setBounds(new Rectangle(25, 74, 96, 19));
+    jlblbalance.setText("0");
+    jlblbalance.setBounds(new Rectangle(146, 19, 160, 19));
+    jrabdeposit.setMnemonic('D');
+    jrabdeposit.setSelected(true);
+//    jrabdeposit.setText(res.getString("Deposit"));
+    jrabdeposit.setBounds(new Rectangle(149, 42, 87, 27));
+    jrabwithdraw.setMnemonic('W');
+//    jrabwithdraw.setText(res.getString("Withdraw"));
+    jrabwithdraw.setBounds(new Rectangle(251, 42, 87, 27));
+    jtxtamount.setToolTipText("");
+    jtxtamount.setBounds(new Rectangle(146, 74, 243, 23));
+    jbtnok.setBounds(new Rectangle(26, 119, 79, 29));
+    jbtnok.setMnemonic('O');
+//    jbtnok.setText(res.getString("OK"));
+    jbtnok.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        jbtnok_actionPerformed(e);
+      }
+    });
+    jbtnlogout.setBounds(new Rectangle(113, 119, 79, 29));
+    jbtnlogout.setMnemonic('L');
+//    jbtnlogout.setText(res.getString("Logout"));
+    jbtnlogout.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        jbtnlogout_actionPerformed(e);
+      }
+    });
+    jScrollPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+    jScrollPane1.setBorder(titledBorder1);
+    jScrollPane1.setBounds(new Rectangle(26, 165, 367, 107));
+    this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    this.setResizable(false);
+    this.setTitle("Account: ");
+    this.addWindowListener(new java.awt.event.WindowAdapter() {
+      public void windowClosed(WindowEvent e) {
+        this_windowClosed(e);
+      }
+      public void windowActivated(WindowEvent e) {
+        this_windowActivated(e);
+      }
+      public void windowOpened(WindowEvent e) {
+        this_windowOpened(e);
+      }
+      public void windowClosing(WindowEvent e) {
+        this_windowClosing(e);
+      }
+    });
+    jtxastatus.setEditable(false);
+    jlblbalance.setBounds(new Rectangle(176, 20, 160, 19));
+    jlblbalance.setText("0");
+//    jlblbalance.setVisible(false);
+    getContentPane().add(panel1, null);
+    panel1.add(jLabel1, null);
+    panel1.add(jLabel2, null);
+    panel1.add(jLabel3, null);
+    panel1.add(jrabdeposit, null);
+    jbtgtype.add(jrabdeposit);
+    jbtgtype.add(jrabwithdraw);
+    panel1.add(jrabwithdraw, null);
+    panel1.add(jtxtamount, null);
+    panel1.add(jbtnok, null);
+    panel1.add(jbtnlogout, null);
+    panel1.add(jScrollPane1, null);
+    panel1.add(jlblbalance, null);
+ //   panel1.add(jlblbalance1, null);
+    jScrollPane1.getViewport().add(jtxastatus, null);
+    getRootPane().setDefaultButton(jbtnok);
+  }
+
+  void jbtnlogout_actionPerformed(ActionEvent e) {
+    int result = JOptionPane.showConfirmDialog(this,
+    "Are you sure to logout now?", "Logout", JOptionPane.YES_NO_OPTION );
+    if (result == 0) {
+      this.dispose() ;
+    }
+  }
+
+  void this_windowClosed(WindowEvent e) {
+
+  }
+
+  // calculate the new balance after user deposit / withdraw money
+  double calc(double balance, double amount, String action) {
+    double newbalance = 0.00;
+    if (action == "deposited") {
+      newbalance = balance + amount;
+    }
+    else {
+      newbalance = balance - amount;
+    }
+    return newbalance;
+  }
+
+  void jbtnok_actionPerformed(ActionEvent e) {
+    try
+    {
+
+      String action;
+      String logtext;
+      String loginid;
+      int pos = -1;
+      pos = this.getTitle().indexOf(":");              //becareful
+      loginid = this.getTitle().substring(pos + 2);
+
+//      NumberFormat nf = NumberFormat.getNumberInstance();
+//      nf.setMaximumFractionDigits(2);
+//      nf.setMinimumFractionDigits(2);
+
+      currencyFormatter.setMaximumFractionDigits(2);
+      currencyFormatter.setMinimumFractionDigits(2);
+
+      double newbalance;
+      double balance = Double.parseDouble(jlblbalance.getText());
+      double amount = Double.parseDouble(jtxtamount.getText());
+
+      // if amount smaller or equal to zero, no action performed
+      if (amount <= 0) {
+        return;
+      }
+
+      // identify the action performed
+      if (jrabdeposit.isSelected() == true) {
+        action = "deposited";
+      }
+      else {
+        action = "withdrawn";
+      }
+
+      // calc. the new balance
+      newbalance = calc(balance, amount, action);
+
+      if (newbalance >= 0) {
+        Date today = new Date();
+ //       DateFormat datefmt = DateFormat.getDateTimeInstance();
+        // add by andy //
+        DateFormat datefmt = null;
+        datefmt = DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.FULL, currentLocale);
+        // add by andy
+        jlblbalance.setText(String.valueOf(newbalance));
+     //   jlblbalance.setText(currencyFormatter.format(newbalance));
+        logtext = datefmt.format(today) + ".  You have " + action + " " + currencyFormatter.format(amount);
+        jtxastatus.append(logtext + "\n");
+
+        setBalance(loginid, newbalance);
+        writeLog(loginid, logtext);
+      }
+      else {
+        JOptionPane.showMessageDialog(this,
+            "Your balance is not enough for withdrawl!\nTransaction is rejected.",
+            "Error message", JOptionPane.ERROR_MESSAGE);
+      }
+      jtxtamount.setText("");
+    }
+    catch (NumberFormatException ee) {              // update by andy cheng
+      JOptionPane.showMessageDialog(this,           // handle NumberFormatException error
+        "Invalid Integer Input",
+        "Error message", JOptionPane.ERROR_MESSAGE);
+      jtxtamount.setText("");
+    }
+
+  }
+
+  void this_windowActivated(WindowEvent e) {
+  }
+
+  void this_windowOpened(WindowEvent e) {
+    jtxtamount.requestFocus();
+  }
+
+  double getBalance(String loginid) {
+    String inline;
+    double balance = 0;
+    try
+    {
+      FileInputStream fis = new FileInputStream("user.txt");
+//      FileInputStream fis = new FileInputStream(ATM_Account.class.getResource("user.txt").toString());
+      InputStreamReader isr = new InputStreamReader(fis, "Unicode");
+      BufferedReader br = new BufferedReader(isr);
+      inline = br.readLine();
+      int pos = -1;
+
+      while (inline != null) {
+        pos = inline.indexOf(",");
+        if (loginid.equalsIgnoreCase(inline.substring(1, pos - 1))) {
+          inline = inline.substring(pos + 1);
+          pos = inline.lastIndexOf(",");
+          balance = Double.parseDouble(inline.substring(pos + 1));
+          break;
+        }
+        inline = br.readLine();
+      }
+    }
+    catch (Exception e) {e.printStackTrace();}
+
+    return balance;
+  }
+
+  void getLog(String loginid) {
+    String inline;
+    try
+    {
+      FileInputStream fis = new FileInputStream("log.txt");
+//      FileInputStream fis = new FileInputStream(ATM_Account.class.getResource("log.txt").toString());
+      InputStreamReader isr = new InputStreamReader(fis, "Unicode");
+      BufferedReader br = new BufferedReader(isr);
+      inline = br.readLine();
+      int pos = -1;
+
+      while (inline != null) {
+        pos = inline.indexOf(",");
+        if (loginid.equalsIgnoreCase(inline.substring(2, pos - 1))) {
+          inline = inline.substring(pos + 2);
+          pos = inline.indexOf("\"");
+          jtxastatus.append(inline.substring(0, pos) + "\n");
+        }
+        inline = br.readLine();
+      }
+    }
+    catch (Exception e) {e.printStackTrace();}
+  }
+
+  void writeLog(String loginid, String logevent) {
+    try
+    {
+      FileOutputStream fos = new FileOutputStream("log.txt", true);
+//      FileOutputStream fos = new FileOutputStream(ATM_Account.class.getResource("log.txt").toString(), true);
+      OutputStreamWriter osw = new OutputStreamWriter(fos, "Unicode");
+      BufferedWriter bw = new BufferedWriter(osw);
+      bw.write("\"" + loginid + "\",\"" + logevent + "\"\r\n");
+      bw.close();
+    }
+    catch (Exception e) {e.printStackTrace();}
+  }
+  void setBalance(String loginid, double newbalance) {
+
+    NumberFormat nf = NumberFormat.getNumberInstance();
+    nf.setMaximumFractionDigits(2);
+    nf.setMinimumFractionDigits(2);
+
+    int pos = -1;
+    long filepointer = -1;
+    int lineno = 0;
+    String inline = "";
+    String userinfo = "";
+    String startline = "";
+    try
+    {
+      FileInputStream fis = new FileInputStream("user.txt");
+      InputStreamReader isr = new InputStreamReader(fis, "Unicode");
+      BufferedReader br = new BufferedReader(isr);
+
+      inline = br.readLine();
+      startline = startline + inline + "\r";
+      lineno++;
+
+      while (inline != null) {
+        pos = inline.indexOf(",");
+        if (loginid.equalsIgnoreCase(inline.substring(1, pos - 1)))  {
+          pos = inline.lastIndexOf(",");
+          userinfo = inline.substring(0, pos + 1);
+          int linelength = 0;
+          linelength = startline.length() ;
+          linelength -= inline.length();
+          startline = startline.substring(0, linelength - 1);
+          startline = startline + userinfo;
+          break;
+        }
+        inline = br.readLine();
+        startline = startline + inline + "\r";
+        lineno++;
+      }
+
+      String restline = "";
+      inline = br.readLine();
+      while (inline != null) {
+        restline = restline + inline + "\r";
+        inline = br.readLine();
+      }
+      br.close();
+      isr.close();
+      fis.close();
+
+      FileOutputStream fos = new FileOutputStream("user.txt",false);
+      OutputStreamWriter osw = new OutputStreamWriter(fos, "Unicode");
+      BufferedWriter bw = new BufferedWriter(osw);
+
+      bw.write(startline + String.valueOf(newbalance) + "\r" + restline);
+      bw.close();
+      osw.close();
+      fos.close();
+
+    }
+    catch (Exception e) {e.printStackTrace();}
+  }
+
+  void this_windowClosing(WindowEvent e) {
+
+  }
+
+}

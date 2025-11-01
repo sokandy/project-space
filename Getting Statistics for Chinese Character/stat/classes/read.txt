@@ -1,0 +1,7009 @@
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+PowerQuest(R) BootMagic(R)
+6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標
+PowerQuest(R) BootMagic(R)6.0 版
+
+目錄
+-----------------
+1. 從 BMBOOT 到 PQBOOT
+2. 在 Windows 2000 下安裝
+3. 已知的問題
+	A. 抽取式儲存媒體
+	B. 複製主分割磁區
+	C. 在壓縮磁碟機中安裝
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟機混淆
+4. PowerQuest 的 Storage Manager 新聞簡訊
+
+
+
+1. 從 BMBoot 到 PQBoot
+-------------------
+BMBOOT.EXE 已不再隨附於 BootMagic 發售。它已經被 PQBOOT.EXE 
+和 PQBOOT32.EXE 所取代。PQBOOT.EXE 是一個 16 位元的 DOS 程式，
+擁有BMBoot 所有的功能加上 PQBoot 的功能。PQBOOT32.EXE 是在 
+Windows NT、Windows 2000 和 Windows 9x 上執行的 32 位元版 
+PQBoot。在 Windows 9x 作業環境下，PQBoot32 與 PQVXD.VXD 必須
+放在同一個目錄才能執行。
+
+
+2. 在 Windows 2000 下安裝
+-------------------------------
+在 Windows 2000 中安裝 BootMagic 時，建議您最好安裝到 FAT16 分
+割磁區。如果安裝到 FAT32 分割磁區，救援磁片將無法看到 BootMagic 
+的分割磁區。如果您已經安裝到 FAT32 分割磁區上，您可以從一台 
+Windows 98 電腦建立救援磁片；這樣的話救援磁片就能正確看到 FAT32 
+BootMagic 分割磁區了。
+
+
+3. 已知的問題
+---------------
+
+	A. 抽取式儲存媒體
+	-------------------
+	有些抽取式儲存媒體會在啟動電腦時造成明顯的延遲。如果
+	您的啟動時間延遲過久，而且您使用的是抽取式磁碟的話，
+	請確定您在啟動電腦或設定 BootMagic 時已將抽取式磁碟置
+	入機匣中。  
+
+	B. 複製主分割磁區
+	--------------------------------------
+	如果您使用 PartitionMagic(R) 或 Drive Image(R) 之類的軟體複
+	製主分割磁區，結果會變成兩個主分割磁區，BootMagic 組
+	態程式將無法執行。如果您的硬碟有這種情況的話，您必須
+	用 BootMagic 救援磁片啟動電腦。救援磁碟會引導您完成修
+	復問題的步驟。
+
+	C. 在壓縮磁碟機中安裝
+	-----------------------------------
+	建議不要在安裝了縮壓磁碟的分割磁區中安裝 BootMagic。
+	如果您選擇在經過磁碟壓縮的分割磁區安裝 BootMagic，建
+	議您在安裝 BootMagic之前先解除安裝磁碟壓縮軟體。如需
+	解除安裝磁碟壓縮軟體的資訊，請參閱磁碟壓縮文件。
+
+	如果決定要在具有磁碟壓縮的磁碟機上安裝 BootMagic，請
+	務必確定磁碟中未壓縮的部份（主分割磁區），有足夠空間
+	容納 BootMagic。BootMagic必須安裝在硬碟中未壓縮的部份。
+	如需關於調整壓縮磁區可用空間到主分割磁區的資訊，請參
+	閱磁碟壓縮文件。
+
+	為使 BootMagic 能正確運作，請在壓縮軟體中，將壓縮磁碟
+	的主分割磁區設定為可見的，並為它指定一個磁碟機字元。
+	如果主分割磁區是設定為「隱藏」，BootMagic 可能會繼續
+	安裝的動作，但是您將無法執行 BootMagic 組態程式或解除
+	安裝 BootMagic。如果 BootMagic 嘗試安裝到一個您沒看過
+	的磁碟機字元，表示您的系統可能安裝了磁碟壓縮軟體，並
+	且隱藏了主分割磁區。
+
+	D. 解除安裝 DOS 安裝版與手動解除安裝
+	--------------------------------------------------------------
+	如果您使用 DOS 安裝程式安裝了 BootMagic，而現在想要解
+	除安裝，或者您希望手動解除安裝 BootMagic，請執行下列：
+
+	請在「BootMagic 組態」程式取消選取「啟動 BootMagic」核
+	取方塊，然後按一下「儲存/結束」，停用 BootMagic。重新
+	啟動電腦，並刪除 \BTMAGIC.PQ 子目錄。
+
+	E. 在 Windows NT/Windows 2000 中 IDE/SCSI 磁碟混淆
+	-------------------------------------------------
+	如果您執行的是配備 SCSI 和 IDE 硬碟的 Windows NT 或 
+	Windows 2000，並且設定從某一部 SCSI 磁碟機啟動電腦，
+	則 BootMagic 組態程式中顯示的磁碟機順序，可能會與開機
+	時出現的順序不同。這樣可能會造成當您從 Windows NT 或 
+	Windows 2000 安裝 BootMagic 之後，它卻無法出現。
+
+	另外，在 Windows NT 或 Windows 2000 中新增的 BootMagic 
+	功能表項目，開機時也可能不會出現。解決的方法是，從 
+	DOS或 Windows 9x 安裝 BootMagic，然後在 DOS 或 Windows 
+	9x 執行 BootMagic 組態程式。
+
+
+4. POWERQUEST 的 STORAGE MANAGER 新聞簡訊
+------------------------------------------
+PowerQuest 有一份每月發行的電子新聞簡訊（只有英文版），專門用
+作有關 PowerQuest 產品的正式發佈。這份新聞簡訊包括了如何讓您
+的 PowerQuest 產品發揮最大功能的相關提示和技巧。線上瀏覽簡訊
+的網址為：www.powerquest.com/newsletter/index.html。
+
+======================================================================
+Copyright 1997-2000，PowerQuest Corporation。版權所有。
+相關專利申請正在美國及其他地區作業中。PowerQuest、BootMagic、
+PartitionMagic 及Drive Image 均為 PowerQuest Corporation 的
+商標或註冊商標。
+

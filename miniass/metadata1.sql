@@ -1,0 +1,10 @@
+INSERT INTO USER_SDO_GEOM_METADATA 
+  VALUES (
+  'build',
+  'shape',
+  MDSYS.SDO_DIM_ARRAY(   -- 20X20 grid
+    MDSYS.SDO_DIM_ELEMENT('X', 0, 400, 0.5),
+    MDSYS.SDO_DIM_ELEMENT('Y', 0, 300, 0.5)
+     ),
+  NULL   -- SRID
+);
